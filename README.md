@@ -16,9 +16,7 @@ Whether you are a beginner or just curious, Block by Block gives you everything 
 ## Structures
 ### 
 ## Mobs
-###
-## Timelne
-### This page will
+### This page will classify mobs into their types — passive, neutral, and hostile —
 ---
 # JavaScript use:
 ### JavaScript will be utilized on the website to create interactive elements such as expandable and collapsible panels that reveal additional information. Examples include the hamburger menu, which displays various links when clicked, and accordions that expand downward to provide more detailed content.
