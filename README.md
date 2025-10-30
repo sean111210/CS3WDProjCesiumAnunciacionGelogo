@@ -4,7 +4,7 @@
 ---
 ### Description
 #### Block by Block is an informational website that introduces visitors to the world of Minecraft — the creative sandbox game loved by millions around the world.
-This website explains what Minecraft is, how it works, and why it’s so popular. Visitors can learn about the game’s history, versions, gameplay features, and fun facts that make it one of the most unique and creative games ever made.
+This website explains what Minecraft is, how it works, and why it’s so popular. Users can learn about the game’s history, versions, and gameplay features. They will be able to learn the necessary information to play Minecraft and explore its vast world.
 Whether you are a beginner or just curious, Block by Block gives you everything you need to know about Minecraft in one place.
 ---
 # Breakdown
@@ -29,7 +29,7 @@ Whether you are a beginner or just curious, Block by Block gives you everything 
 ### Notes:
 * The down arrows ↓↓ indicates an accordion, a panel that expands downwards when clicked. This will provide additional information on the topic the accordion is attached to.
 * The vertical ellipsis ⋮ represents a scroll button. This indicates that there is more information further down that cannot be visualized by a wire frame due to the limited size.
-* The hamburger menu ☰ indicates the menu. When clicked, a panel will slide from the left side of the screen, providing more links. These links are miscellaneous, and only provide extra information, as most information in these links are not important to learning more about Minecraft (ex. Statistics or 
+* The hamburger menu ☰ indicates the menu. When clicked, a panel will slide from the left side of the screen, providing more links. These links are miscellaneous, and only provide extra information, as most information in these links are not important to learning more about Minecraft (ex. Statistics or Meet the Creators)
 ---
 ### Home Page
 ![Front Page](assets/frontpage.png)
