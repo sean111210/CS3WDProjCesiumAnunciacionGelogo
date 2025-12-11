@@ -4,13 +4,13 @@
 ---
 ### Description
 #### Block by Block is an informational website that introduces visitors to the world of Minecraft — the creative sandbox game loved by millions around the world.
-This website explains what Minecraft is, how it works, and why it’s so popular. Users can learn about the game’s history, versions, and gameplay features. They will be able to learn the necessary information to play Minecraft and explore its vast world.
-Whether you are a beginner or just curious, Block by Block gives you everything you need to know about Minecraft in one place.
+#### This website explains what Minecraft is, how it works, and why it’s so popular. Users can learn about the game’s history, versions, and gameplay features. They will be able to learn the necessary information to play Minecraft and explore its vast world.
+#### Whether you are a beginner or just curious, Block by Block gives you everything you need to know about Minecraft in one place.
 ---
 # Breakdown
 ## Home/Front Page
 ### This page will contain a short introduction to Minecraft, as well as serving as a menu to go to the rest of the webpages.
-## Mechanics
+## Mechanics    
 ### This page will teach users the core mechanics of Minecraft, from movement to survival to crafting, mining, and combat. 
 ## Dimensions
 ### This page will show the three different dimensions of Minecraft — the Overworld, the Nether, and the End — and the various biomes in each one. Additional information such as biome-exclusive mobs will also be included.

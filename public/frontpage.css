@@ -1,7 +1,25 @@
+@font-face {
+    font-family: 'Minecraft Ten';          /* Name you will use in CSS */
+    src: url('../fonts/MinecraftTen.woff2') format('woff2'),
+         url('../fonts/MinecraftTen.woff') format('woff');
+    font-weight: normal;                 /* Can be bold, 100, 200, etc. */
+    font-style: normal;                  /* normal, italic, etc. */
+    font-display: swap;                  /* Optional: improves loading */
+}
+
+@font-face {
+    font-family: 'Minecraft Regular';          /* Name you will use in CSS */
+    src: url('../fonts/MinecraftRegular-Bmg3.otf') format('opentype');
+    font-weight: normal;                 /* Can be bold, 100, 200, etc. */
+    font-style: normal;                  /* normal, italic, etc. */
+    font-display: swap;                  /* Optional: improves loading */
+}
+
 body {
     margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+    background-color: #292929;
 }
 
 header {
@@ -13,12 +31,54 @@ header {
     font-size: 10px;
 }
 
-header #navbar {
-    font-size: 16px;
-    margin-right: 10px;
-    cursor: pointer;
+#navbar {
+  background-color: #161616; /* Black background color */
+  position: fixed; /* Make it stick/fixed */
+  top: 0; /* Stay on top */
+  width: 100%; /* Full width */
+  padding: 20px 0px;
+  font-size: 20px;
+  transition: top 0.4s; /* Transition effect when sliding down (and up) */
+  z-index: 1000; /* Ensure it stays above other content */
 }
 
+.sidenav {
+  height: 100%; /* Full height */
+  width: 0; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  top: 0;
+  left: 0;
+  background-color: #111; /* Dark background */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.3s; /* Smooth slide effect */
+  padding-top: 60px; /* Space at top for navbar */
+  z-index: 2000; /* On top of navbar */
+}
+
+.sidenav a {
+  padding: 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #fff;
+  display: block;
+  transition: 0.2s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 36px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 50px;
+}
 .container {
     background: #000000;
     padding: 0;
@@ -43,60 +103,105 @@ header #navbar {
     margin-top: -40px;
 }
 
+.gradient {
+  background: linear-gradient(to bottom, #292929, #171717); /* Gradient */
+}
+
+.title {
+    font-family: 'Minecraft Ten';
+    font-size: 70px;
+    color:white;
+    margin-top: 40px;
+    padding: 5px 20px;
+    display: inline-block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Black with 40% opacity */
+    z-index: 5; /* Ensure it sits above the image but below text */
+}
+
 .guide {
+    font-family: 'Minecraft Ten';
+    font-size: 70px;
     text-align: center;
     padding: 20px;
-    max-width: 900px;
+    width: 80%;
     margin: auto;
 }
 
 .guide h2 {
-    font-size: 28px;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
     margin-bottom: 20px;
-    border-bottom: 1px solid rgb(0, 0, 0);
     display: inline-block;
     padding-bottom: 5px;
     text-align: left;
 }
 
-.title {
-    font-size: 26px;
-    margin-top: 40px;
-    padding: 5px 20px;
-    border-bottom: 2px solid black;
+.guide p {
+    font-family: 'Minecraft Regular';
+    font-size: 28px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
     display: inline-block;
+    padding-bottom: 5px;
+    text-align: left;
 }
 
 .guide-grid {
     display: flex;
     margin-top: 30px;
     border: 1px solid black;
-    background: #fff;
+    background: #1e1e1e;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: stretch;
+    position: relative;  /* Add this */
 }
 
 .guide-box {
-    font-size: 32px;
-    font-weight: bold;
+    font-family: 'Minecraft Ten';
+    color: white;
     width: 48%;
-    height: 180px;
+    min-height: 400px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
 }
+
+.placeholder {
+    width: 48%;
+    min-height: 400px;
+    border: 1px solid black;
+    background: #e7e7e7;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;  /* Add this */
+}
+
+.placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Fills the container without distortion */
+}
+
 .guide-title {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-.placeholder {
-    width: 48%;
-    height: 180px;
-    border: 1px solid black;
-    background: #e7e7e7;
-    overflow: hidden;
+    color: white;
+    font-size: 100px;  /* Adjust as needed */
+    z-index: 10;      /* Ensures it appears above the image */
 }
 
 footer {
