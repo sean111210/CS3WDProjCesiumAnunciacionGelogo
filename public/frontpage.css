@@ -8,11 +8,11 @@
 }
 
 @font-face {
-    font-family: 'Minecraft Regular';          /* Name you will use in CSS */
+    font-family: 'Minecraft Regular';          
     src: url('../fonts/MinecraftRegular-Bmg3.otf') format('opentype');
-    font-weight: normal;                 /* Can be bold, 100, 200, etc. */
-    font-style: normal;                  /* normal, italic, etc. */
-    font-display: swap;                  /* Optional: improves loading */
+    font-weight: normal;                 
+    font-style: normal;               
+    font-display: swap;                  
 }
 
 body {
@@ -32,14 +32,14 @@ header {
 }
 
 #navbar {
-  background-color: #161616; /* Black background color */
-  position: fixed; /* Make it stick/fixed */
-  top: 0; /* Stay on top */
-  width: 100%; /* Full width */
+  background-color: #161616; 
+  position: fixed; /
+  top: 0; 
+  width: 100%;
   padding: 20px 0px;
   font-size: 20px;
-  transition: top 0.4s; /* Transition effect when sliding down (and up) */
-  z-index: 1000; /* Ensure it stays above other content */
+  transition: top 0.4s; 
+  z-index: 1000; 
 }
 
 .sidenav {
@@ -48,11 +48,11 @@ header {
   position: fixed; /* Stay in place */
   top: 0;
   left: 0;
-  background-color: #111; /* Dark background */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  transition: 0.3s; /* Smooth slide effect */
-  padding-top: 60px; /* Space at top for navbar */
-  z-index: 2000; /* On top of navbar */
+  background-color: #111;
+  overflow-x: hidden; 
+  transition: 0.3s;
+  padding-top: 60px; 
+  z-index: 2000; 
 }
 
 .sidenav a {
@@ -104,7 +104,7 @@ h2 {
 }
 
 .gradient {
-  background: linear-gradient(to bottom, #292929, #171717); /* Gradient */
+  background: linear-gradient(to bottom, #292929, #171717);
 }
 
 .title {
@@ -122,8 +122,8 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Black with 40% opacity */
-    z-index: 5; /* Ensure it sits above the image but below text */
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: 5; 
 }
 
 .guide {
@@ -162,7 +162,7 @@ h2 {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: stretch;
-    position: relative;  /* Add this */
+    position: relative;  
 }
 
 .guide-box {
@@ -185,13 +185,13 @@ h2 {
     background: #e7e7e7;
     overflow: hidden;
     box-sizing: border-box;
-    position: relative;  /* Add this */
+    position: relative; 
 }
 
 .placeholder img {
     width: 100%;
     height: 100%;
-    object-fit: cover;  /* Fills the container without distortion */
+    object-fit: cover;  
 }
 
 .guide-title {
@@ -200,8 +200,8 @@ h2 {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 100px;  /* Adjust as needed */
-    z-index: 10;      /* Ensures it appears above the image */
+    font-size: 100px; 
+    z-index: 10;      
 }
 
 footer {
