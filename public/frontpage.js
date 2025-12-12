@@ -1,18 +1,3 @@
-window.onload = function() {
-  var prevScrollpos = window.pageYOffset;
-  var navbar = document.getElementById("navbar");
-
-  window.onscroll = function() {
-    var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-      navbar.style.top = "0";
-    } else {
-      navbar.style.top = `-${navbar.offsetHeight}px`;
-    }
-    prevScrollpos = currentScrollPos;
-  }
-};
-
 // Grab elements
 var sideNav = document.getElementById("sideNav");
 var hamburger = document.getElementById("hamburger");
@@ -26,4 +11,14 @@ hamburger.onclick = function() {
 // Close side menu
 closeBtn.onclick = function() {
   sideNav.style.width = "0";
+}
+
+// expansion on focus
+var guideGrid = document.getElementById("guide-grid");
+var guideBox = document.getElementById("guide-box");
+var placeholder = document.getElementById("placeholder");
+
+guideGrid.onfocus = function() {
+  guideBox.style.width = "450px";
+  placeholder.style.width = "450px";  
 }
