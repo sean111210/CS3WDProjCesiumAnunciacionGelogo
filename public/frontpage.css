@@ -6,6 +6,7 @@ body {
 }
 
 header {
+    font-family: 'Minecraft Ten';
     background: #333333;
     color: white;
     padding: 15px 20;
@@ -16,7 +17,7 @@ header {
 
 #navbar {
   background-color: #161616; 
-  position: fixed; /
+  position: fixed; 
   top: 0; 
   width: 100%;
   padding: 20px 0px;
@@ -109,7 +110,7 @@ h2 {
     z-index: 5; 
 }
 
-.guide {
+.section {
     font-family: 'Minecraft Ten';
     font-size: 70px;
     text-align: center;
@@ -118,7 +119,7 @@ h2 {
     margin: auto;
 }
 
-.guide h2 {
+.section h2 {
     font-size: 50px;
     color: rgb(255, 255, 255);
     margin-bottom: 20px;
@@ -127,7 +128,7 @@ h2 {
     text-align: left;
 }
 
-.guide p {
+.section p {
     font-family: 'Minecraft Regular';
     font-size: 28px;
     color: rgb(255, 255, 255);
@@ -137,10 +138,9 @@ h2 {
     text-align: left;
 }
 
-.guide-grid {
+.section-grid {
     display: flex;
     margin-top: 30px;
-    border: 1px solid black;
     background: #1e1e1e;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -148,49 +148,69 @@ h2 {
     position: relative;  
 }
 
-.guide-grid a {
-    padding: 8px 32px;
-    text-decoration: none;
-    font-size: 100px;
-    color: #353535;
-    display: block;
-    transition: 0.3s;
-}
-
-.guide-grid a:hover {
-    color: rgb(53, 53, 53);
-}
-
-.guide-box {
-    font-family: 'Minecraft Ten';
+.section-grid > * {
+    flex: 1 1 200px;        
+    min-height: 400px; 
+    gap: 30px;       
+    background: #333;
     color: white;
-    width: 48%;
-    min-height: 400px;
-    display: flex;
+    display: flex;          
     align-items: center;
     justify-content: center;
-    font-size: 80px;
-    box-sizing: border-box;
-    margin-bottom: 20px;
+    transition: transform 0.4s ease; 
+    transform-origin: center;  
 }
 
-.placeholder {
-    width: 48%;
-    min-height: 400px;
-    border: 1px solid black;
-    background: #e7e7e7;
-    overflow: hidden;
-    box-sizing: border-box;
-    position: relative; 
+.section-grid:hover > * {
+    transform: scale(1.05); 
+    background:#454545;
+}
+
+.section-grid  a { 
+    color: white;
+    position: relative;      /* Required for underline */
+    text-decoration: none;
+}
+
+.section-grid a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 4px;
+    bottom: -10px;
+    left: 0;
+    color:white;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.section-grid  a:hover::after {
+    width: 100%;
 }
 
 .placeholder img {
+    background: rgba(255, 255, 255, 0);
     width: 100%;
     height: 100%;
     object-fit: cover;  
 }
 
-.guide-title {
+.placeholder::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0);
+    transition: background 0.4s ease; 
+}
+
+.section-grid:hover .placeholder::after {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#timeline-title {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -198,6 +218,27 @@ h2 {
     color: white;
     font-size: 100px; 
     z-index: 10;      
+}
+
+#timeline-title a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+}
+
+#timeline-title a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 4px;
+    bottom: -10px;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+#timeline-title a:hover::after {
+    width: 100%;
 }
 
 footer {
