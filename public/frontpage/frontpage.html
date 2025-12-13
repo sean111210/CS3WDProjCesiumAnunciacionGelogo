@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Block by Block</title>
+        <link rel="stylesheet" href="frontpage.css">
+        <link rel="stylesheet" href="../fonts.css">
+        <script src="../script.js"></script>
+    </head>
+    <body>
+        <header> 
+            <div id="navbar">
+                <span id="menu" onClick="openNav()">&#9776;</span>
+                <span style="margin-right: 100px;">BLOCK BY BLOCK</span>
+                <span class="nav-links">
+                    <a href="#"><span class="nav-accordion" id="about-us">&#9660;</span> ABOUT US</a>
+                    <a href="#"><span class="nav-accordion" id="games">&#9660;</span> GAMES</a>
+                    <a href="#"><span class="nav-accordion" id="support">&#9660;</span> SUPPORT</a>
+                </span>
+            </div>
+        </header>
+
+        <div class="container">
+            <img src="/assets/background.png" class="container-img" style="position: absolute; top: 0; left: 0; z-index: 0;">
+            <div class="gradient" style="--color-top: rgba(0, 0, 0, 0); --color-bottom: rgba(0, 0, 0, 0.6); position: absolute;z-index: 1"></div>
+            <img src="/assets/foreground.png" class="container-img" style="position: absolute; top: 0; left: 0; z-index: 2;">
+        </div>
+
+        <div id="sidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onClick="closeNav()">&times;</a>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div class="gradient" style="--color-top: #292929; --color-bottom: #171717;">
+            <div class="section">
+                <h2>WHAT IS MINECRAFT?</h2>
+                <p>Minecraft is a sandbox adventure developed by Mojang Studios. In this video game, players can do whatever they want;
+                    they can craft tools and armor, build structures and contraptions, and explore the 3D world of Minecraft. The game has multiple
+                    modes, including Survival mode, Creative mode, Adventure mode, and Spectator mode, each offering a different gameplay experience.
+                    With its endless possibilities and creative freedom, Minecraft offers one of the most unique experiences possible. No matter what 
+                    you're looking for, Minecraft has something for you. 
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="title">GUIDE</div>
+            <div class="section-grid">
+                <div class="section-title"><a href="">LEARN</a></div>
+                <div class="placeholder"><img src="/assets/explore.png"></div>                
+            </div>
+            <div class="section-grid">
+                <div class="placeholder"><img src="/assets/dimensions.png"></div>
+                <div class="section-title"><a href="">EXPLORE</a></div>                
+            </div>
+            <div class="section-grid">
+                <div class="section-title"><a href="">ENCOUNTER</a></div>
+                <div class="placeholder"><img src="/assets/mobs.png"></div>                
+            </div>
+            <div class="section-grid">
+                <div class="placeholder"><img src="/assets/structures.png"></div>
+                <div class="section-title"><a href="">DISCOVER</a></div>                
+            </div>
+            <div class="section-grid">         
+                <div class="placeholder"><img src="/assets/mc-alpha.png"></div>
+                <div class="overlay"></div>  
+                <div id="timeline-title"><a href="">TIMELINE</a></div>            
+            </div>
+        </div>
+    <script src="frontpage.js"></script>
+    </body>
+</html>
+
+<!-- FOOTER -->
+    <footer>
+        <div>
+            ✖ Official Minecraft Page <br>
+            ✖ Official X <br>
+            ✖ Official YouTube <br>
+            ✖ Official TikTok
+        </div>
+        <div>Copyright © ANUNCIACION, GELOGO</div>
+    </footer>
