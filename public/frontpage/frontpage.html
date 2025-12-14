@@ -5,39 +5,65 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Block by Block</title>
         <link rel="stylesheet" href="frontpage.css">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="../styles.css">
         <link rel="stylesheet" href="../fonts.css">
-        <script src="../script.js"></script>
     </head>
     <body>
         <header> 
             <div id="navbar">
                 <span id="menu" onClick="openNav()">&#9776;</span>
                 <span style="margin-right: 100px;">BLOCK BY BLOCK</span>
-                <span class="nav-links">
-                    <a href="#"><span class="nav-accordion" id="about-us">&#9660;</span> ABOUT US</a>
-                    <a href="#"><span class="nav-accordion" id="games">&#9660;</span> GAMES</a>
-                    <a href="#"><span class="nav-accordion" id="support">&#9660;</span> SUPPORT</a>
-                </span>
+                <div class="nav-links">
+                    <div class="nav-accordion">                       
+                        <span class="button" id="about-us"">&#9660;</span>
+                        <span>ABOUT US</span>
+                    </div> 
+                    <div class="panel">
+                        <h1>WHAT IS BLOCK BY BLOCK?</h1>
+                        <p> Block by Block is a project dedicated to helping the playerbase of Minecraft navigate its 3D world and explore its many dimensions,
+                            aiming to provide a comprehensive guide on the game's core mechanics and features. Through Block by Block, our team aims to help players
+                            utilize Minecraft's endless possibilities and creative freedom to its fullest potential.
+                        </p>
+                    </div> 
+                    <div class="nav-accordion"> 
+                        <span class="button" id="games">&#9660;</span>
+                        <span>GAMES</span>
+                    </div> 
+                    <div class="panel">
+                        <a href="#">Mechanics</a>
+                        <a href="#">Mobs</a>
+                        <a href="#">Structures</a>
+                    </div> 
+                    <div class="nav-accordion"> 
+                        <span class="button" id="resources">&#9660;</span>
+                        <span>RESOURCES</span>
+                    </div>
+                    <div class="panel">
+                        <a href="#">Mechanics</a>
+                        <a href="#">Mobs</a>
+                        <a href="#">Structures</a>
+                    </div>
+                </div>
             </div>
         </header>
 
-        <div class="container">
-            <img src="/assets/background.png" class="container-img" style="position: absolute; top: 0; left: 0; z-index: 0;">
-            <div class="gradient" style="--color-top: rgba(0, 0, 0, 0); --color-bottom: rgba(0, 0, 0, 0.6); position: absolute;z-index: 1"></div>
-            <img src="/assets/foreground.png" class="container-img" style="position: absolute; top: 0; left: 0; z-index: 2;">
-        </div>
-
         <div id="sidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onClick="closeNav()">&times;</a>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            <a href="#">Meet the Makers</a>
+            <a href="#">Upcoming</a>
+            <a href="#">Support</a>
+            <a href="#">Sources</a>
+        </div>
+
+        <div class="hero-banner">
+            <img src="/assets/background.png" class="hero-img" style="position: absolute; top: 0; left: 0; z-index: 0;">
+            <div class="gradient" style="--color-top: rgba(0, 0, 0, 0); --color-bottom: rgba(0, 0, 0, 0.6); position: absolute;z-index: 1"></div>
+            <img src="/assets/foreground.png" class="hero-img" style="position: absolute; bottom: 0; z-index: 5;">
         </div>
 
         <div class="gradient" style="--color-top: #292929; --color-bottom: #171717;">
             <div class="section">
-                <h2>WHAT IS MINECRAFT?</h2>
+                <h1 id="title">WHAT IS MINECRAFT?</h1>
                 <p>Minecraft is a sandbox adventure developed by Mojang Studios. In this video game, players can do whatever they want;
                     they can craft tools and armor, build structures and contraptions, and explore the 3D world of Minecraft. The game has multiple
                     modes, including Survival mode, Creative mode, Adventure mode, and Spectator mode, each offering a different gameplay experience.
@@ -48,7 +74,7 @@
         </div>
 
         <div class="section">
-            <div class="title">GUIDE</div>
+            <div id="title">GUIDE</div>
             <div class="section-grid">
                 <div class="section-title"><a href="">LEARN</a></div>
                 <div class="placeholder"><img src="/assets/explore.png"></div>                
@@ -65,13 +91,8 @@
                 <div class="placeholder"><img src="/assets/structures.png"></div>
                 <div class="section-title"><a href="">DISCOVER</a></div>                
             </div>
-            <div class="section-grid">         
-                <div class="placeholder"><img src="/assets/mc-alpha.png"></div>
-                <div class="overlay"></div>  
-                <div id="timeline-title"><a href="">TIMELINE</a></div>            
-            </div>
         </div>
-    <script src="frontpage.js"></script>
+    <script src="../script.js"></script>
     </body>
 </html>
 
