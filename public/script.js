@@ -29,6 +29,7 @@ function closeNav() {
 /*accordion open and close functions*/
 
 var buttons = document.querySelectorAll('.button');
+
 buttons.forEach(function(button){
     button.addEventListener('click', function(){
       /*toggle clicked panel*/
@@ -51,8 +52,7 @@ buttons.forEach(function(button){
           panels.style.maxHeight = "0";
           panels.style.paddingBottom = "0";
           panels.style.paddingTop = "0";
-          var btn = p.previousElementSibling.querySelector('.button');
-          if(btn) btn.innerHTML = "&#9660;"; // reset arrow
+          button.innerHTML = "&#9660;";
         }
       });
     });

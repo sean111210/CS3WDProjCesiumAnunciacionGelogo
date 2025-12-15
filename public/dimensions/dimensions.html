@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="dimensions.css">
         <link rel="stylesheet" href="../styles.css">
         <link rel="stylesheet" href="../fonts.css">
+        <link rel="icon" href="/assets/favicon.png" type="image/png">
     </head>
     <body>
         <header> 
@@ -15,7 +16,7 @@
                 <span style="margin-right: 100px;">BLOCK BY BLOCK</span>
                 <div class="nav-links">
                     <div class="nav-accordion">                       
-                        <span class="button" id="about-us"">&#9660;</span>
+                        <span class="button" id="about-us">&#9660;</span>
                         <span>ABOUT US</span>
                     </div> 
                     <div class="panel">
@@ -26,7 +27,7 @@
                         </p>
                     </div> 
                     <div class="nav-accordion"> 
-                        <span class="button" id="games"">&#9660;</span>
+                        <span class="button" id="games">&#9660;</span>
                         <span>GAMES</span>
                     </div> 
                     <div class="panel">
@@ -35,7 +36,7 @@
                         <a href="#">Structures</a>
                     </div> 
                     <div class="nav-accordion"> 
-                        <span class="button" id="resources"">&#9660;</span>
+                        <span class="button" id="resources">&#9660;</span>
                         <span>RESOURCES</span>
                     </div>
                     <div class="panel">
@@ -51,14 +52,13 @@
             <img src="/assets/dimensions-background.png" class="banner-img" style="position: absolute; top: 0; left: 0; z-index: 0;">
             <div class="gradient" style="--color-top: rgba(0, 0, 0, 0); --color-bottom: rgba(0, 0, 0, 0.6); position: absolute;z-index: 1"></div>
             <img src="/assets/foreground-simple.png" class="banner-img" style="position: absolute; bottom: 0;; z-index: 3;">
-            <div class="head-title" style="z-index: 4;">DIMENSIONS</div>
+            <div class="header-title" style="z-index: 4;">DIMENSIONS</div>
         </div>
 
         <div id="sidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onClick="closeNav()">&times;</a>
             <a href="#">Meet the Makers</a>
             <a href="#">Upcoming</a> 
-            <a href="#">Support</a>
             <a href="#">Sources</a>
         </div>
 
@@ -74,25 +74,29 @@
             </div>
         </div>
 
+        <div class="slider-title">DIMENSIONS</div>
         <div class="slider-container">
             <div class="slider-view">
                 <img src="/assets/nether.png">
                 <img src="/assets/overworld.png">
                 <img src="/assets/end.png">
-                <!-- Next and previous buttons -->
-                <div>
-                <span id="prev">&#10094;</span>
-                <span id="next">&#10095;</span>
-                </div>
             </div>
+            <span id="prev">&#10094;</span>
+            <span id="next">&#10095;</span>
         </div>
 
-        <!-- The dots/circles -->
-        <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
+        <div class="slider-title" style="padding: 0">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
         </div>
+
+        <div class="dimension-content">
+            <div class="dimension-panel" data-dim="nether">NETHER</div>
+            <div class="dimension-panel" data-dim="overworld">OVERWORLD</div>
+            <div class="dimension-panel" data-dim="end">END</div>
+        </div>
+        
 
     <script src="dimensions.js"></script>
     <script src="../script.js"></script>
@@ -101,11 +105,13 @@
 
 <!-- FOOTER -->
     <footer>
-        <div>
+        <div class="footer-links">
             ✖ Official Minecraft Page <br>
             ✖ Official X <br>
             ✖ Official YouTube <br>
             ✖ Official TikTok
         </div>
-        <div>Copyright © ANUNCIACION, GELOGO</div>
+        <div class="footer-copyright">
+            Copyright © ANUNCIACION, GELOGO
+        </div>
     </footer>

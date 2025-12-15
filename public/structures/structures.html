@@ -4,9 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Block by Block</title>
-        <link rel="stylesheet" href="structure.css">
+        <link rel="stylesheet" href="structures.css">
         <link rel="stylesheet" href="../styles.css">
         <link rel="stylesheet" href="../fonts.css">
+        <link rel="icon" href="/assets/favicon.png" type="image/png">
     </head>
     <body>
         <header> 
@@ -55,18 +56,69 @@
             <a href="#">Sources</a>
         </div>
 
-    <script src="structure.js"></script>
+        <div class="page-banner">
+            <img src="/assets/dimensions-background.png" class="banner-img" style="position: absolute; top: 0; left: 0; z-index: 0;">
+            <div class="gradient" style="--color-top: rgba(0, 0, 0, 0); --color-bottom: rgba(0, 0, 0, 0.6); position: absolute;z-index: 1"></div>
+            <img src="/assets/foreground-simple.png" class="banner-img" style="position: absolute; bottom: 0;; z-index: 3;">
+            <div class="header-title" style="z-index: 4;">DIMENSIONS</div>
+        </div>
+
+        <div class="gradient" style="--color-top: #292929; --color-bottom: #171717;">
+            <div class="section">
+                <h1>STRUCTURES</h1>
+                <p> Structures are pre-generated buildings or formations found throughout the Minecraft world. They can range from simple villages and temples to 
+                    towering bastions and fortresses. These structures often contain valuable and unique loot, as well as mobs that can pose a challenge to players.
+                    It is important for players to know about these structures, as some of these often contain essential resources as well as loot that can boost
+                    progression.
+                </p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="dim-selection-body">
+                <div class="dim-selectors" data-dim="overworld">overworld</div>
+                <div class="dim-selectors" data-dim="nether">nether</div>
+                <div class="dim-selectors" data-dim="end">end</div>
+            </div>
+
+            <div class="dim-content">
+                <div class="dim-panel" data-dim="overworld">
+                    <h1>OVERWORLD</h1>
+                    <p>Survival Mode is the default gamemode of Minecraft. In this gamemode, players have to survive,
+                        building and crafting items, tools, and blocks. There is a health bar as well as a hunger bar
+                        that slowly depletes over time, and an oxygen bar that appears when you are underwater. When you
+                        run out of hearts in your health bar, you die and return to your spawn point.
+                    </p>
+                </div>
+                <div class="dim-panel" data-dim="nether">
+                    <h1>NETHER</h1>
+                    <p>This gamemode is similar to Survival Mode. However, your interaction is limited. You can interact with
+                        all mobs, but you can only interact with certain objects like levers and doors, and place blocks only on 
+                        certain other blocks. This gamemode is often used for custom maps, with the restrictions preventing 
+                        players from cheating or griefing/destroying maps.
+                    </p>
+                </div>
+                <div class="dim-panel" data-dim="end">
+                    <h1>THE END</h1>
+                    <p>In Spectator Mode, you can effectively fly freely, clipping through blocks and entities. However,
+                        you cannot interact with blocks, entities, or their own inventory, as their hotbar is invisible. You
+                        do not have a hunger or health bar in this gamemode.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    <script src="structures.js"></script>
     <script src="../script.js"></script>
     </body>
 </html>
 
-<!-- FOOTER -->
-    <footer>
-        <div>
-            ✖ Official Minecraft Page <br>
-            ✖ Official X <br>
-            ✖ Official YouTube <br>
-            ✖ Official TikTok
-        </div>
-        <div>Copyright © ANUNCIACION, GELOGO</div>
-    </footer>
+<footer>
+    <div style="text-align: left;">
+        <a href="https://www.minecraft.net/en-us">✖ Official Minecraft Page</a> <br>
+        <a href="https://x.com/Minecraft">✖ Official X</a> <br>
+        <a href="https://www.youtube.com/@minecraft">✖ Official YouTube</a> <br>
+        <a href="https://www.tiktok.com/@minecraft?lang=en">✖ Official TikTok</a>
+    </div>
+    <div style="text-align: right;">Copyright © ANUNCIACION, GELOGO</div>
+</footer>

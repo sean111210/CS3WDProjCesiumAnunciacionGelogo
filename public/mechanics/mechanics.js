@@ -21,7 +21,7 @@ modeSelectors.forEach(function(modeSelector) {
     }
 });
 
-//initialize panel selection for difficulties section
+//initialize panel selection for gamemodes section
 
 const diffSelectors = document.querySelectorAll(".diff-selectors");
 const diffPanels = document.querySelectorAll(".diff-panel");

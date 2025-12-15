@@ -4,7 +4,7 @@
     background: linear-gradient(to bottom, var(--color-top), var(--color-bottom));
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: -1; /*appears behind all content*/
 }
 
 #title {
@@ -29,13 +29,12 @@
 .section { 
     margin: 0 5vw;
     display: flex;
-    flex-direction: row;   /* row layout */
-    justify-content: flex-start;  /* align children horizontally */
-    align-items: flex-start;      /* align children to top */
+    justify-content: flex-start;  
+    align-items: flex-start;      
 }
 
-.section h2 {
-    font-size: 50px;
+.section h1 {
+    font-size: 80px;
     color: white;
     margin-bottom: 20px;
     display: inline-block;
@@ -53,27 +52,9 @@
     text-align: left;
 }
 
-.head-title {
-    font-family: 'Minecraft Ten';
-    font-size: 40px;
-    height: 50px;
-    color: white;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 0;
-    text-align: center;
-    align-items: center;
-    background-color: rgb(161, 161, 161);
-    width: 90%;
-    box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.4) inset, 
-                -5px 0 0 rgba(113, 113, 113, 0.4) inset, 
-                5px 0 0 rgba(192, 192, 192, 0.4) inset, 
-                0 5px 0 rgba(255, 255, 255, 0.4) inset;
-}
-
-.selection {
+.selection-body {
     height: 400px;
-    width: 20vw;   
+    width: 10vw;   
     padding-bottom: 30px;     
     gap: 3px;
     color: rgb(58, 58, 58);             
@@ -83,11 +64,11 @@
     text-align: left;
 }
 
-.selection > * {
+.selection-body > * {
     margin-left: auto;
     cursor: pointer;
     padding-left: 10px;
-    width: 15vw;
+    width: 7vw;
     height: 50px;
     color: rgb(147, 147, 147);
     box-shadow: 
@@ -101,12 +82,12 @@
     transition: 0.3s;
 }
 
-.selection > *:hover {
+.selection-body > *:hover {
     background-color: rgb(83, 83, 83);
 }
 
-.selection > *.active {
-    width: 20vw;
+.selection-body > *.active {
+    width: 10vw;
     color:white;
     background-color: rgba(144, 144, 144, 1);
     box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.4) inset, 
@@ -127,6 +108,20 @@
         -5px 0 0 rgba(113, 113, 113, 0.5) inset,   
         5px 0 0 rgba(192, 192, 192, 0.5) inset,    
         0 5px 0 rgba(255, 255, 255, 0.5) inset;     
+}
+
+.mode-panel, .diff-panel {
+    flex-direction: column;
+}
+
+.mode-panel h2, .diff-panel h2 {
+    font-family: 'Minecraft Ten';
+    font-size: 50px;
+    color: white;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding-bottom: 5px;
+    text-align: left;
 }
 
 .diff-body {
@@ -150,21 +145,16 @@
         0 5px 0 rgba(255, 255, 255, 0.5) inset;     
 }
 
-.diff-content {
-    display: flex;
-    width: 20vw;               
-    height: 400px;
-    padding: 15px;
-    background-color: #a0a0a0;
-    box-shadow: 
-        0 -5px 0 rgba(0, 0, 0, 0.5) inset,   
-        -5px 0 0 rgba(113, 113, 113, 0.5) inset,   
-        5px 0 0 rgba(192, 192, 192, 0.5) inset,    
-        0 5px 0 rgba(255, 255, 255, 0.5) inset;     
-}
-
 .content-img {
-    width: 100%;
-    height: 100%;
+    height: 10px;
     object-fit: contain;
 }
+
+.mechanics-panel {
+    margin: 50px auto;
+    margin-top: 100px;
+    width: 80vw;               
+    height: 1000px;
+    padding: 15px;   
+}
+

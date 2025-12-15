@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="mechanics.css">
         <link rel="stylesheet" href="../styles.css">
         <link rel="stylesheet" href="../fonts.css">
+        <link rel="icon" href="/assets/favicon.png" type="image/png">
     </head>
     <body>
         <header> 
@@ -15,7 +16,7 @@
                 <span style="margin-right: 100px;">BLOCK BY BLOCK</span>
                 <div class="nav-links">
                     <div class="nav-accordion">                       
-                        <span class="button" id="about-us"">&#9660;</span>
+                        <span class="button" id="about-us">&#9660;</span>
                         <span>ABOUT US</span>
                     </div> 
                     <div class="panel">
@@ -26,7 +27,7 @@
                         </p>
                     </div> 
                     <div class="nav-accordion"> 
-                        <span class="button" id="games"">&#9660;</span>
+                        <span class="button" id="games">&#9660;</span>
                         <span>GAMES</span>
                     </div> 
                     <div class="panel">
@@ -35,7 +36,7 @@
                         <a href="#">Structures</a>
                     </div> 
                     <div class="nav-accordion"> 
-                        <span class="button" id="resources"">&#9660;</span>
+                        <span class="button" id="resources">&#9660;</span>
                         <span>RESOURCES</span>
                     </div>
                     <div class="panel">
@@ -55,9 +56,9 @@
             <a href="#">Sources</a>
         </div>
 
-        <div class="gradient" style="--color-top: #292929; --color-bottom: #171717;">
+        <div id="title" style="font-size:75px">MECHANICS</div>
+        <div class="gradient" style="--color-top: #292929; --color-bottom: #171717; margin-top: 80px;">
             <div class="section">
-                <h1>MECHANICS</h1>
                 <p> In order to grasp the full experience of Minecraft, it is important for players to understand its core mechanics and features.
                     Learning the fundamentals of the game will allow players to unlock new possibilities for creation and exploration within the world
                     of Minecraft.
@@ -66,9 +67,9 @@
         </div>
         
         <div id="title">FEATURES</div>
-        <div class="head-title">GAMEMODES</div>
+        <div class="head-title"  style="width:90%;">GAMEMODES</div>
         <div class="section">
-            <div class="selection">
+            <div class="selection-body">
                 <div class="mode-selectors" data-mode="survivalMode">adventure</div>
                 <div class="mode-selectors" data-mode="adventureMode">survival</div>
                 <div class="mode-selectors" data-mode="spectatorMode">spectator</div>
@@ -77,7 +78,7 @@
 
             <div class="mode-content">
                 <div class="mode-panel" data-mode="survivalMode">
-                    <h1>SURVIVAL MODE</h1>
+                    <h2>SURVIVAL MODE</h2>
                     <p>Survival Mode is the default gamemode of Minecraft. In this gamemode, players have to survive,
                         building and crafting items, tools, and blocks. There is a health bar as well as a hunger bar
                         that slowly depletes over time, and an oxygen bar that appears when you are underwater. When you
@@ -85,7 +86,7 @@
                     </p>
                 </div>
                 <div class="mode-panel" data-mode="adventureMode">
-                    <h1>ADVENTURE MODE</h1>
+                    <h2>ADVENTURE MODE</h2>
                     <p>This gamemode is similar to Survival Mode. However, your interaction is limited. You can interact with
                         all mobs, but you can only interact with certain objects like levers and doors, and place blocks only on 
                         certain other blocks. This gamemode is often used for custom maps, with the restrictions preventing 
@@ -93,27 +94,36 @@
                     </p>
                 </div>
                 <div class="mode-panel" data-mode="spectatorMode">
-                    <h1>SPECTATOR MODE</h1> </p>
+                    <h2>SPECTATOR MODE</h2>
                     <p>In Spectator Mode, you can effectively fly freely, clipping through blocks and entities. However,
                         you cannot interact with blocks, entities, or their own inventory, as their hotbar is invisible. You
                         do not have a hunger or health bar in this gamemode.
                     </p>
                 </div>
                 <div class="mode-panel" data-mode="creativeMode">
-                    <h1>CREATIVE MODE</h1>
+                    <h2>CREATIVE MODE</h2>
                     <p>Creative Mode is where the "sandbox" part of Minecraft truly comes in. In Creative Mode, you can do 
                         whatever you want, with access to an infinite amount of blocks and items, and almost complete 
                         invulnerability.You can use items and blocks normally inaccessible to the player in Survival Mode, 
                         and can fly around, though you cannot clip through blocks and entities.
                     </p>
                 </div>
+                <div class="mode-panel" data-mode="hardcoreMode">
+                    <h2>HARDCORE MODE</h2>
+                    <p>Hardcore is like survival mode, but with a much greater challenge. The difficulty is locked to hard, 
+                        and players only have one life. When you die in hardcore mode, you cannot respawn; instead, you can only
+                        spectate the world you were playing in. This gamemode is for players looking for the ultimate survival 
+                        challenge.
+                    </p>
+                </div>
+                
             </div>
         </div>
 
-        <div class="head-title">DIFFICULTIES</div>
+        <div class="head-title" style="width:90%;">DIFFICULTIES</div>
         <div class="section">
             <div class="diff-body"></div>
-            <div class="selection">
+            <div class="selection-body">
                 <div class="diff-selectors" data-diff="peaceful">peaceful</div>
                 <div class="diff-selectors" data-diff="easy">easy</div>
                 <div class="diff-selectors" data-diff="normal">normal</div>
@@ -126,15 +136,13 @@
                 </div>
                 <div class="diff-panel" data-diff="easy">
                     <h1>EASY</h1>
+                    <div></div>
                 </div>
                 <div class="diff-panel" data-diff="normal">
                     <h1>NORMAL</h1> </p>
                 </div>
                 <div class="diff-panel" data-diff="hard">
                     <h1>HARD</h1>
-                </div>
-                <div class="diff-panel" data-diff="hardcore">
-                    <h1>HARDCORE</h1>
                 </div>
             </div>
         </div>
@@ -148,18 +156,42 @@
             </div>
         </div>
 
+        <div class="mechanics-panel">
+            <div class="section body">
+                <div class="section-img"></div>
+                <div class="section-text"></div>
+            </div>
+            <div class="section body">
+                <div class="section-img"></div>
+                <div class="section-text"></div>
+            </div>
+            <div class="section body">
+                <div class="section-img"></div>
+                <div class="section-text"></div>
+            </div>
+            <div class="section body">
+                <div class="section-img"></div>
+                <div class="section-text"></div>
+            </div>
+            <div class="section body">
+                <div class="section-img"></div>
+                <div class="section-text"></div>
+            </div>
+        </div>
+
+        <div class =""></div>
+
     <script src="mechanics.js"></script>
     <script src="../script.js"></script>
     </body>
 </html>
 
-<!-- FOOTER -->
     <footer>
-        <div>
-            ✖ Official Minecraft Page <br>
-            ✖ Official X <br>
-            ✖ Official YouTube <br>
-            ✖ Official TikTok
+        <div style="text-align: left;">
+            <a href="https://www.minecraft.net/en-us">✖ Official Minecraft Page</a> <br>
+            <a href="https://x.com/Minecraft">✖ Official X</a> <br>
+            <a href="https://www.youtube.com/@minecraft">✖ Official YouTube</a> <br>
+            <a href="https://www.tiktok.com/@minecraft?lang=en">✖ Official TikTok</a>
         </div>
-        <div>Copyright © ANUNCIACION, GELOGO</div>
+        <div style="text-align: right;">Copyright © ANUNCIACION, GELOGO</div>
     </footer>

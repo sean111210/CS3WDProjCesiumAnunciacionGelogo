@@ -1,0 +1,61 @@
+
+.dim-selection-body {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 80vw;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.dim-selectors {
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    padding-left: 15px;
+    gap: 10px;
+    color: rgb(147, 147, 147);
+    box-shadow: 
+        0 -5px 0 rgba(0, 0, 0, 0.2) inset,   
+        -5px 0 0 rgba(33, 33, 33, 0.2) inset,   
+        5px 0 0 rgba(192, 192, 192, 0.2) inset,    
+        0 5px 0 rgba(255, 255, 255, 0.2) inset; 
+    display: flex;
+    text-align: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+    transform: scaleY(1);
+    transform-origin: bottom;
+}
+
+.dim-selectors:hover {
+    background-color: rgb(83, 83, 83);
+}
+
+.dim-selectors.active {
+    transform:scaleY(1.1);
+    color:white;
+    background-color: rgba(144, 144, 144, 1);
+    box-shadow:  -5px 0 0 rgba(33, 33, 33, 0.4) inset, 
+                5px 0 0 rgba(192, 192, 192, 0.4) inset, 
+                0 5px 0 rgba(255, 255, 255, 0.4) inset;;
+}
+
+.dim-content {
+    height: 400px;
+    width: 80vw;   
+    padding-left: 20px;
+    padding-bottom: 30px;     
+    gap: 5px;
+    color: rgb(58, 58, 58);             
+    background: rgb(149, 149, 149);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: left;
+    box-shadow: 
+        0 -5px 0 rgba(0, 0, 0, 0.2) inset,   
+        -5px 0 0 rgba(113, 113, 113, 0.2) inset,   
+        5px 0 0 rgba(206, 206, 206, 0.2) inset,    
+        0 5px 0 rgba(255, 255, 255, 0.2) inset; 
+}

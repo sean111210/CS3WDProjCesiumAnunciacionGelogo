@@ -1,85 +1,80 @@
-.page-banner {
-    width: 100vw;
-    max-width: 100%;
-    height: 800px;
-    background: #505050;
-    padding: 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.banner-img {
-    height: auto;
-    width: 100vw;
-    display: block;
-    overflow: hidden;
-}
-
-.head-title {
-    font-family: 'Minecraft Ten';
-    font-size: 200px;
-    color: white;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .section {
-    font-family: 'Minecraft Ten';
-    font-size: 70px;
-    text-align: center;
-    padding: 20px;
-    width: 80%;
-    margin: auto;
-    justify-content: center; 
-    align-items: center;
-    overflow: hidden;
+  font-family: 'Minecraft Ten';
+  font-size: 70px;
+  text-align: center;
+  padding: 20px;
+  width: 80%;
+  margin: auto;
+  justify-content: center; 
+  align-items: center;
+  overflow: hidden;
 }
 
 .section h2 {
-    font-size: 50px;
-    color: rgb(255, 255, 255);
-    margin-bottom: 20px;
-    display: inline-block;
-    padding-bottom: 5px;
-    text-align: left;
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+  display: inline-block;
+  padding-bottom: 5px;
+  text-align: left;
 }
 
 .section p {
-    font-family: 'Minecraft Regular';
-    font-size: 28px;
-    color: rgb(255, 255, 255);
-    margin-bottom: 20px;
-    display: inline-block;
-    padding-bottom: 5px;
-    text-align: left;
+  font-family: 'Minecraft Regular';
+  font-size: 28px;
+  color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+  display: inline-block;
+  padding-bottom: 5px;
+  text-align: left;
 }
 
+.slider-title {
+  font-family: 'Minecraft Ten';
+  font-size: 40px;
+  height: 50px;
+  padding-bottom: 10px;
+  color: white;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: rgb(161, 161, 161);
+  box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.4) inset, 
+              -5px 0 0 rgba(113, 113, 113, 0.4) inset, 
+              5px 0 0 rgba(192, 192, 192, 0.4) inset, 
+              0 5px 0 rgba(255, 255, 255, 0.4) inset;
+}  
+
 .slider-container {
-    max-width: 300vw;
-    height: 600px;
-    position: relative;
-    margin: auto;
-    overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  height: 600px;
+  position: relative;
+  display: flex;
+  overflow: hidden;
 }
 
 .slider-view {
-    width: 100vw;
-    display: flex;
+  display: flex;
+  overflow: hidden;
+  transition: transform 0.5s ease;
 }
 
-.slider img {
-    width: 100vw;
-    overflow:hidden;
-    flex-shrink: 0;
+.slider-view img {
+  width: 100vw;
+  height: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+  display: block;
 }
 
 #prev, #next {
   cursor: pointer;
   position: absolute;
   top: 50%;
+  bottom: 50%;
   width: auto;
   margin-top: -22px;
   padding: 16px;
@@ -87,11 +82,16 @@
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+  border-radius: 3px 0 0 3px;
   user-select: none;
   z-index: 10;
 }
 
+
+#prev {
+  left: 0;
+  border-radius: 3px 0 0 3px
+}
 
 /* Position the "next button" to the right */
 #next {
@@ -106,17 +106,52 @@
 
 /* The dots/bullets/indicators */
 .dot {
-  cursor: pointer;
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #bbb;
+  background-color: rgb(94, 94, 94);
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.6s ease;
+  transition: background-color 0.3s ease;
 }
 
-.active, .dot:hover {
-  background-color: #717171;
+.dot.active {
+  height: 20px;
+  width: 20px;
+  background-color: rgb(189, 189, 189);
 }
 
+.dimension-content {
+  position: relative;
+  height: 500px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.dimension-panel {
+  font-family: 'Minecraft Ten';
+  font-size: 60px;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #a0a0a0;
+  box-shadow: 
+    0 -5px 0 rgba(0, 0, 0, 0.5) inset,   
+    -5px 0 0 rgba(113, 113, 113, 0.5) inset,   
+    5px 0 0 rgba(192, 192, 192, 0.5) inset,    
+    0 5px 0 rgba(255, 255, 255, 0.5) inset; 
+  opacity: 0;
+  transition: transform 0.5s ease;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.dimension-panel.active {
+  opacity: 1;
+  transform: scaleY(1);
+}
