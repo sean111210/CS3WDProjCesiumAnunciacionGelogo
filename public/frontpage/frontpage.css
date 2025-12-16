@@ -89,7 +89,7 @@
 
 .guide a { 
     color: white;
-    position: relative;      /* Required for underline */
+    position: relative;    
     text-decoration: none;
 }
 
