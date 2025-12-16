@@ -13,10 +13,11 @@
         <header> 
             <div id="navbar">
                 <span id="menu" onClick="openNav()">&#9776;</span>
-                <span style="margin-right: 100px;">BLOCK BY BLOCK</span>
+                <span id="logo"><img src="/assets/favicon.png" height="30px"></span>
+                <span style="margin-right: 100px; margin-left: 10px;">BLOCK BY BLOCK</span>
                 <div class="nav-links">
                     <div class="nav-accordion">                       
-                        <span class="button" id="about-us"">&#9660;</span>
+                        <span class="button" id="about-us">&#9660;</span>
                         <span>ABOUT US</span>
                     </div> 
                     <div class="panel">
@@ -31,9 +32,10 @@
                         <span>GAMES</span>
                     </div> 
                     <div class="panel">
-                        <div class="game-panel"><</div> 
+                        <div class="game-panel"></div> 
                         <div class="game-panel"></div>
                         <div class="game-panel"></div>
+                    </div>
                     <div class="nav-accordion"> 
                         <span class="button" id="resources">&#9660;</span>
                         <span>RESOURCES</span>
@@ -74,34 +76,34 @@
 
         <div class="head-title" style="margin: 0; padding: 10px;">GUIDE</div>
         <div class="section">
-            <div class="section-grid">
-                <div class="section-title"><a href="/public/mechanics/mechanics.html">LEARN</a></div>
-                <div class="section-img"><img src="/assets/explore.png"></div>                
+            <div class="guide">
+                <div class="guide-title"><a href="/public/mechanics/mechanics.html">LEARN</a></div>
+                <div class="guide-img"><img src="/assets/explore.png"></div>                
             </div>
-            <div class="section-grid">
-                <div class="section-img"><img src="/assets/dimensions.png"></div>
-                <div class="section-title"><a href="./dimensions/dimensions.html">EXPLORE</a></div>                
+            <div class="guide">
+                <div class="guide-img"><img src="/assets/dimensions.png"></div>
+                <div class="guide-title"><a href="./dimensions/dimensions.html">EXPLORE</a></div>                
             </div>
-            <div class="section-grid">
-                <div class="section-title"><a href="./mobs/mobs.html">ENCOUNTER</a></div>
-                <div class="section-img"><img src="/assets/mobs.png"></div>                
+            <div class="guide">
+                <div class="guide-title"><a href="./mobs/mobs.html">ENCOUNTER</a></div>
+                <div class="guide-img"><img src="/assets/mobs.png"></div>                
             </div>
-            <div class="section-grid">
-                <div class="section-img"><img src="/assets/structures.png"></div>
-                <div class="section-title"><a href="./structures/structures.html">DISCOVER</a></div>                
+            <div class="guide">
+                <div class="guide-img"><img src="/assets/structures.png"></div>
+                <div class="guide-title"><a href="./structures/structures.html">DISCOVER</a></div>                
             </div>
         </div>
     <script src="../script.js"></script>
-    </body>
-</html>
 
-<!-- FOOTER -->
     <footer>
-        <div style="text-align: left;">
-            <a href="https://www.minecraft.net/en-us">✖ Official Minecraft Page</a> <br>
-            <a href="https://x.com/Minecraft">✖ Official X</a> <br>
+        <div class="footer-left">
+            <a href="https://www.minecraft.net/en-us">Official Minecraft Page</a> <br>
+            <a href="https://x.com/Minecraft">Official X</a> <br>
             <a href="https://www.youtube.com/@minecraft">✖ Official YouTube</a> <br>
             <a href="https://www.tiktok.com/@minecraft?lang=en">✖ Official TikTok</a>
         </div>
-        <div style="text-align: right;">Copyright © ANUNCIACION, GELOGO</div>
+        <div class="footer-right">Copyright © ANUNCIACION, GELOGO</div>
     </footer>
+
+    </body>
+</html>

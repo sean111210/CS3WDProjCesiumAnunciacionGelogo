@@ -1,3 +1,7 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -20,7 +24,7 @@ header {
     top: 0; 
     margin: 0;
     width: 100%;
-    padding: 20px 5px;
+    padding: 20px;
     font-size: 20px;
     transition: top 0.4s; 
     background-color: #161616; 
@@ -40,6 +44,10 @@ header {
 
 #menu:hover {
     color: #ffffff;
+}
+
+#logo {
+    
 }
 
 /*side navigation bar*/
@@ -144,12 +152,13 @@ header {
  
 .panel p {
     padding: 10px 20px;
+    padding-bottom: 40px;
     margin: 0;
 }
 
 .banner-img {
   height: auto;
-  width: 100vw;
+  width: 100%;
   display: block;
   overflow: hidden;
 }
@@ -238,17 +247,31 @@ p {
     z-index: 5; 
 }
 
+.footer-left {
+    position: absolute;
+    left: 0;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.footer-right {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    white-space: nowrap;
+}
 
 footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     font-family: 'Minecraft Regular';
     font-size: 14px;
-    margin-top: 100px;
-    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    padding: 50px 0;
     background: black;
-    display: block;
     justify-content: space-between;
     text-align: center;
 }
@@ -269,13 +292,13 @@ footer a::after {
     content: '';
     position: absolute;
     width: 0;
-    height: 2px;
-    bottom: -4px;
+    height: 1.5px;
+    bottom: -2px;
     left: 0;
     background-color: white;
     transition: width 0.3s ease;
 }
 
-footer a::hover::after {
+footer a:hover::after {
     width: 100%;
 }
