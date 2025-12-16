@@ -187,8 +187,6 @@
   width: 50%;          
   align-items: center;
   justify-content: center;
-  transition: transform 0.4s ease; 
-  transform-origin: center;
 }
 
 .biome-img {
@@ -202,24 +200,11 @@
   justify-content: center;
   object-fit: contain;
   overflow: hidden;
-  transition: transform 0.4s ease; 
-  transform-origin: center;
 }
 
 .biome-img img {
   height: 400px;
   object-fit: contain;
-}
-
-.biome-content {
-  font-family: 'Minecraft Regular';
-  font-size: 28px;
-  padding: 20px;
-  color: white;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
 }
 
 

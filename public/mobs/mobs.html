@@ -13,52 +13,19 @@
         <header> 
             <div id="navbar">
                 <span id="menu" onClick="openNav()">&#9776;</span>
-                <span id="logo"><a href="/public/frontpage/frontpage.html"><img src="/assets/favicon.png" height="30px"></a></span>
+                <span id="logo"><a href="../../index.html"><img src="/assets/favicon.png" height="30px"></a></span>
                 <span style="margin-right: 100px;">BLOCK BY BLOCK</span>
-                <div class="nav-links">
-                    <div class="nav-accordion">                       
-                        <span class="button" id="about-us">&#9660;</span>
-                        <span>ABOUT US</span>
-                    </div> 
-                    <div class="panel">
-                        <h1>WHAT IS BLOCK BY BLOCK?</h1>
-                        <p> Block by Block is a project dedicated to helping the playerbase of Minecraft navigate its 3D world and explore its many dimensions,
-                            aiming to provide a comprehensive guide on the game's core mechanics and features. Through Block by Block, our team aims to help players
-                            utilize Minecraft's endless possibilities and creative freedom to its fullest potential.
-                        </p>
-                    </div> 
-                    <div class="nav-accordion"> 
-                        <span class="button" id="games">&#9660;</span>
-                        <span>GAMES</span>
-                    </div> 
-                    <div class="panel">
-                        <a href="#">Mechanics</a>
-                        <a href="#">Mobs</a>
-                        <a href="#">Structures</a>
-                    </div> 
-                    <div class="nav-accordion"> 
-                        <span class="button" id="resources">&#9660;</span>
-                        <span>RESOURCES</span>
-                    </div>
-                    <div class="panel">
-                        <a href="#">Mechanics</a>
-                        <a href="#">Mobs</a>
-                        <a href="#">Structures</a>
-                    </div>
-                </div>
             </div>
         </header>
 
         <div id="sidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onClick="closeNav()">&times;</a>
-            <a href="#">Meet the Makers</a>
-            <a href="#">Upcoming</a> 
-            <a href="#">Support</a>
-            <a href="#">Sources</a>
+            <a href="/public/misc/creators/creators.html">Meet the Makers</a>
+            <a href="/public/misc/upcoming/upcoming.html">Upcoming</a> 
+            <a href="/public/misc/sources/sources.html">Sources</a>
         </div>
-
         <div class="page-banner">
-            <img src="https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/SURVIVE.png" class="banner-img" style="position: absolute; top: 0; left: 0; z-index: 0;">
+            <img src="/assets/mobs-img.png" class="banner-img" style="position: absolute; top: 0; left: 0; z-index: 0;">
             <div class="gradient" style="--color-top: rgba(0, 0, 0, 0); --color-bottom: rgba(0, 0, 0, 0.6); position: absolute;z-index: 1"></div>
             <img src="/assets/foreground-simple.png" class="banner-img" style="position: absolute; bottom: 0;; z-index: 3;">
             <div class="header-title" style="z-index: 4;">MOBS</div>
@@ -70,8 +37,36 @@
                 <p> Mobs are an integral part of the Minecraft experience. As AI-contolled entities, they are littered all around the game world and 
                     contribute to its dynamic environment. From the villager and sheep to the creeper and zombie, mobs add depth and excitement to gameplay.
                     These mobs can drop various items upon death, whether it's resources, food, or rare loot, helping the player in various ways. Mobs can be 
-                    broadly categorized into passive, neutral, and hostile types, each exhibiting distinct behaviors and interactions with players.
+                    broadly categorized into three types, each exhibiting distinct behaviors and interactions with players.
                 </p>
+            </div>
+        </div> 
+
+        <div class="head-title" style="margin: 0;">MOB TYPES</div>
+        <div class="mob-section"></div>
+            <div class="mob-types">
+                <div class="mob-img"><img src="/assets/passive-mobs.png"></div>
+                <div class="mob-content">
+                    <h1>PASSIVE</h1>
+                    <p>Passive or friendly mobs are generally non-aggressive and will not attack the player unless provoked. They are docile and will not
+                        attack the player, regardless if they are provoked or attacked. Most of these types of mobs can be bred and used for resources.</p>
+                </div>
+            </div>
+            <div class="mob-types">
+                <div class="mob-content">
+                    <h1>NEUTRAL</h1>
+                    <p>Neutral mobs are overall passive and will not attack the player unless provoked. They will attack other mobs, but they are not hostile 
+                        towards the player unless attacked first.</p>
+                </div>
+                <div class="mob-img"><img src="/assets/neutral-mobs.png" width="800px;"></div>
+            </div>
+            <div class="mob-types">
+                <div class="mob-img"><img src="/assets/hostile-mobs.png"></div>
+                <div class="mob-content">
+                    <h1>HOSTILE</h1>
+                    <p>Hostile mobs are dangerous, aggressive and will attack the player on sight. They are hostile towards the player and will attack them without 
+                        provocation, each one having unique behaviors and characteristics.</p>
+                </div>
             </div>
         </div>
 
@@ -79,13 +74,13 @@
     <script src="../script.js"></script>
 
     <footer>
-        <div>
-            ✖ Official Minecraft Page <br>
-            ✖ Official X <br>
-            ✖ Official YouTube <br>
-            ✖ Official TikTok
+        <div style="text-align: left;">
+            <a href="https://www.minecraft.net/en-us">Official Minecraft Page</a> <br>
+            <a href="https://x.com/Minecraft">Official X</a> <br>
+            <a href="https://www.youtube.com/@minecraft">Official YouTube</a> <br>
+            <a href="https://www.tiktok.com/@minecraft?lang=en">Official TikTok</a>
         </div>
-        <div>Copyright © ANUNCIACION, GELOGO</div>
+        <div style="text-align: right;"><span>Copyright © ANUNCIACION, GELOGO</span></div>
     </footer>
 
     </body>

@@ -1,6 +1,6 @@
 # CS3WDProjCesiumAnunciacionGelogo
 ## Logo:
-![Logo](assets/logo.png)
+![Logo](assets/favicon.png)
 ---
 ### Description
 #### Block by Block is an informational website that introduces visitors to the world of Minecraft — the creative sandbox game loved by millions around the world.

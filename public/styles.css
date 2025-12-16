@@ -47,7 +47,7 @@ header {
 }
 
 #logo {
-    
+    margin-right: 10px;
 }
 
 /*side navigation bar*/
@@ -111,6 +111,15 @@ header {
 
 .nav-links a:hover {
     color: rgb(233, 233, 233);
+}
+
+.disclaimer-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;     
+    text-align: center;      
+    height: 100vh;          
 }
 
 /* Style the buttons that are used to open and close the accordion panel */
@@ -220,58 +229,64 @@ p {
     z-index: 5; 
 }
 
-.footer-left {
-    position: absolute;
-    left: 0;
-    text-align: left;
-    margin-left: 20px;
-}
-
-.footer-right {
-    position: absolute;
-    right: 0;
-    margin-right: 10px;
-    white-space: nowrap;
-}
-
 footer {
-    position: relative;
-    bottom: 0;
+    position: relative;   /* default */
     width: 100%;
-    font-family: 'Minecraft Regular';
-    font-size: 14px;
+    background: black;
+    padding: 20px 20px;
+    color: rgb(176, 176, 176);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Row with first link + copyright */
+footer .footer-row {
     display: flex;
     align-items: center;
-    margin-top: auto;
-    padding: 50px 0;
-    background: black;
-    justify-content: space-between;
-    text-align: center;
+    margin-bottom: 20px;
 }
 
-footer a {
-    margin-left: 10px;
-    position: relative;
-    color: rgb(176, 176, 176);
+footer .footer-row a {
+    margin-right: 20px;
+}
+
+/* Push copyright to the right */
+footer .footer-row span {
+    margin-left: auto;
+}
+
+/* All links: hover animation */
+footer * {
+    position: relative;       /* for ::after */
     text-decoration: none;
+    color: rgb(176, 176, 176);
 }
 
-footer a:hover {
-    cursor: pointer;
-    color: white;
-}
-
-footer a::after {
+footer *::after {
     content: '';
     position: absolute;
-    width: 0;
-    height: 1.5px;
     bottom: -2px;
     left: 0;
+    width: 0;
+    height: 1.5px;
     background-color: white;
     transition: width 0.3s ease;
 }
 
+footer *:hover {
+    color: white;
+}
+
 footer a:hover::after {
     width: 100%;
+}
+
+footer span:hover::after {
+    width: 100%;
+}
+
+/* Links stacked below */
+footer .footer-links a {
+    display: block;
+    margin-bottom: 10px;
 }
