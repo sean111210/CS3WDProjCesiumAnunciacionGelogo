@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Block by Block</title>
+        <link rel="stylesheet" href="public/styles.css">
+        <link rel="stylesheet" href="public/homepage.css">
+        <link rel="stylesheet" href="public/fonts.css">
+        <link rel="icon" href="assets/favicon.png" type="image/png">
+    </head>
+    <body>
+        <header> 
+            <div id="navbar">
+                <span id="menu" onClick="openNav()">&#9776;</span>
+                <span id="logo"><a href="index.html"><img src="assets/favicon.png" height="30px"></a></span>
+                <span style="margin-right: 100px;">BLOCK BY BLOCK</span>
+            </div>
+        </header>
+
+        <div id="sidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onClick="closeNav()">&times;</a>
+            <a href="misc/creators/creators.html">Meet the Makers</a>
+            <a href="misc/sources/sources.html">Upcoming</a>
+            <a href="misc/upcoming/upcoming.html">Sources</a>
+        </div>
+
+        <div class="hero-banner">
+            <img src="assets/background.png" class="hero-img" style="position: absolute; top: 0; left: 0; z-index: 0;">
+            <div class="gradient" style="--color-top: rgba(0, 0, 0, 0); --color-bottom: rgba(0, 0, 0, 0.6); position: absolute;z-index: 1"></div>
+            <img src="assets/foreground.png" class="hero-img" style="position: absolute; bottom: 0; z-index: 5;">
+        </div>
+
+        <div class="gradient" style="--color-top: #292929; --color-bottom: #171717;">
+            <div class="section">
+                <h1 id="title">WHAT IS MINECRAFT?</h1>
+                <p>Minecraft is a sandbox adventure developed by Mojang Studios. In this video game, players can do whatever they want;
+                    they can craft tools and armor, build structures and contraptions, and explore the 3D world of Minecraft. The game has multiple
+                    modes, including Survival mode, Creative mode, Adventure mode, and Spectator mode, each offering a different gameplay experience.
+                    With its endless possibilities and creative freedom, Minecraft offers one of the most unique experiences possible. No matter what 
+                    you're looking for, Minecraft has something for you. 
+                </p>
+            </div>
+        </div>
+
+        <div class="head-title" style="margin: 0;">GUIDE</div>
+        <div class="section">
+            <div class="guide">
+                <div class="guide-title"><a href="/public/mechanics/mechanics.html">LEARN</a></div>
+                <div class="guide-img"><img src="assets/explore.png"></div>                
+            </div>
+            <div class="guide">
+                <div class="guide-img"><img src="assets/dimensions.png"></div>
+                <div class="guide-title"><a href="public/dimensions/dimensions.html">EXPLORE</a></div>                
+            </div>
+            <div class="guide">
+                <div class="guide-title"><a href="public/mobs/mobs.html">ENCOUNTER</a></div>
+                <div class="guide-img"><img src="assets/mobs.png"></div>                
+            </div>
+            <div class="guide">
+                <div class="guide-img"><img src="assets/structures.png"></div>
+                <div class="guide-title"><a href="public/structures/structures.html">DISCOVER</a></div>                
+            </div>
+        </div>
+    <script src="public/script.js"></script>
+
+    <footer>
+        <div class="footer-left">
+            <a href="https://www.minecraft.net/en-us">Official Minecraft Page</a> <br>
+            <a href="https://x.com/Minecraft">Official X</a> <br>
+            <a href="https://www.youtube.com/@minecraft">✖ Official YouTube</a> <br>
+            <a href="https://www.tiktok.com/@minecraft?lang=en">✖ Official TikTok</a>
+        </div>
+        <div class="footer-right">Copyright © ANUNCIACION, GELOGO</div>
+    </footer>
+
+    </body>
+</html>

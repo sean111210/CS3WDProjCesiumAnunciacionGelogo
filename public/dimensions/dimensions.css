@@ -123,8 +123,6 @@
 
 .dimension-content {
   position: relative;
-  height: 500px;
-  max-height: 1000px;
   width: 80%;
   margin: 0 auto;
 }
@@ -132,12 +130,14 @@
 .dimension-panel {
   font-family: 'Minecraft Ten';
   font-size: 60px;
+  padding: 0 20px;
+  max-height: 0;
   color: white;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  position: absolute;
-  inset: 0;
+  position: relative;
+  inset: unset;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -155,42 +155,72 @@
 }
 
 .dimension-panel.active {
+  max-height: 5000px;
   opacity: 1;
   transform: scaleY(1);
 }
 
 .biome-section {
   display: flex;
-  height: 200px;
+  flex-direction: row;
   margin-top: 30px;
-  background: #1e1e1e;
+  width: 90%;
+  background: #898989;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: stretch;
   position: relative; 
+  box-shadow: 
+    0 -5px 0 rgba(0, 0, 0, 0.5) inset,   
+    -5px 0 0 rgba(113, 113, 113, 0.5) inset,   
+    5px 0 0 rgba(192, 192, 192, 0.5) inset,    
+    0 5px 0 rgba(255, 255, 255, 0.5) inset; 
 }
 
 .biome-title {
-  font-family: 'Minecraft Ten';
-  font-size: 40px;
-  height: 50px;
-  width: 50%;
+  font-size: 90px;
+  flex: 1 0 50%;        
+  height: 400px; 
+  gap: 20px;   
   color: white;
-  margin: auto;
-  text-align: center;
+  display: flex;
+  width: 50%;          
   align-items: center;
   justify-content: center;
-  display: flex;
+  transition: transform 0.4s ease; 
+  transform-origin: center;
 }
 
 .biome-img {
-  width: 50%;
-  height: auto;
-  text-align: center;
-  padding: 20px;
-  width: 80%;
-  margin: auto;
-  justify-content: center; 
+  flex: 1 0 50%;        
+  height: 400px; 
+  gap: 20px;   
+  color: white;
+  display: flex;
+  width: 50%;          
   align-items: center;
+  justify-content: center;
+  object-fit: contain;
   overflow: hidden;
+  transition: transform 0.4s ease; 
+  transform-origin: center;
 }
+
+.biome-img img {
+  height: 400px;
+  object-fit: contain;
+}
+
+.biome-content {
+  font-family: 'Minecraft Regular';
+  font-size: 28px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
+

@@ -129,33 +129,6 @@ header {
     cursor: pointer;
 }
 
-.panel {
-    position: absolute;
-    max-height: 0;
-    top: 100%;
-    left: 0;
-    background-color: #1f1f1f;
-    overflow: hidden; 
-    transition: max-height 0.3s ease, padding 0.3s ease;
-    z-index: 999; /*below navbar but above content*/ 
-    box-shadow: 0 -10px 0 rgba(146, 146, 146, 0.2) inset,
-                0 -5px 0 rgba(90, 90, 90, 0.4) inset;
-                
-}
-
-.panel h1 {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 10px;
-    margin: 0;
-}
- 
-.panel p {
-    padding: 10px 20px;
-    padding-bottom: 40px;
-    margin: 0;
-}
-
 .banner-img {
   height: auto;
   width: 100%;
