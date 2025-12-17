@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Minecraft Ten';          /* Name you will use in CSS */
-    src: url('../../assets/fonts/MinecraftTen.woff2') format('woff2'),
-         url('../../assets/fonts/MinecraftTen.woff') format('woff');
+    src: url('../assets/fonts/MinecraftTen.woff2') format('woff2'),
+         url('../assets/fonts/MinecraftTen.woff') format('woff');
     font-weight: normal;                 /* Can be bold, 100, 200, etc. */
     font-style: normal;                  /* normal, italic, etc. */
     font-display: swap;                  /* Optional: improves loading */
@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: 'Minecraft Regular';          
-    src: url('../../assets/fonts/MinecraftRegular-Bmg3.otf') format('opentype');
+    src: url('../assets/fonts/MinecraftRegular-Bmg3.otf') format('opentype');
     font-weight: normal;                 
     font-style: normal;               
     font-display: swap;                  
