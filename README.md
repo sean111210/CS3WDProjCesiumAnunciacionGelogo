@@ -23,11 +23,11 @@
 ## Sources
 ### This page will include all of the sources. The sources will be divided according to the webpage that their information was cited in.
 ## Login
-### This page will request for your login information, specifically your username and email. If an account 
+### This page will request for your login information, specifically your password and email. If an account with that email and password already exists, it will automatically log in, and if it is completely new to the website, the users will be prompted if they want to register. If the email does not exist, the user will be informed as such, and will not be allowed to log in. If the password is incorrect, the same will happen.
 ## Profile Customization
-### This page will include all of the sources. The sources will be divided according to the webpage that their information was cited in.
+### This page will allow users to customize their profile using the data gathered from the login page. Users will be able to choose a username, display name, and a profile picture. Through this page, one will be able to customize their preferences for the forum page, allowing them to only see content of that category.
 ## Forums
-### This page will include all of the sources. The sources will be divided according to the webpage that their information was cited in.
+### This page will allow users to communicate to others through threads and comments. They will be able to ask questions regarding Minecraft, whether it's a tip in PvP, building a house, how to fix a redstone contraption, etc., and they will be able to answer such questions to their ability. Threads will be compressed at first, only expanding downwards to provide more information once clicked.
 ---
 # JavaScript use:
 ### JavaScript will be utilized on the website to create interactive elements such as expandable and collapsible panels that reveal additional information. Examples include the hamburger menu, which displays various links when clicked, and accordions that expand downward to provide more detailed content.
