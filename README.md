@@ -22,6 +22,12 @@
 ### This page will trace the history of Minecraft and its development from beginning to end, starting from the early alpha to present day. Users will be able to learn how the game changed version by version, with detailed information hidden in expanding panels.
 ## Sources
 ### This page will include all of the sources. The sources will be divided according to the webpage that their information was cited in.
+## Login
+### This page will request for your login information, specifically your username and email. If an account 
+## Profile Customization
+### This page will include all of the sources. The sources will be divided according to the webpage that their information was cited in.
+## Forums
+### This page will include all of the sources. The sources will be divided according to the webpage that their information was cited in.
 ---
 # JavaScript use:
 ### JavaScript will be utilized on the website to create interactive elements such as expandable and collapsible panels that reveal additional information. Examples include the hamburger menu, which displays various links when clicked, and accordions that expand downward to provide more detailed content.
@@ -32,14 +38,20 @@
 * The hamburger menu ☰ indicates the menu. When clicked, a panel will slide from the left side of the screen, providing more links. These links are miscellaneous, and only provide extra information, as most information in these links are not important to learning more about Minecraft (ex. Statistics or Meet the Creators)
 ---
 ### Home Page
-![Front Page](assets/frontpage.png)
+![Front Page](assets/frontpage-wireframe.png)
 ### Home Page (Expanded)
-![Front Page — Expanded](assets/frontpage-expanded.png)
+![Front Page — Expanded](assets/frontpage-expanded-wireframe.png)
 ### First Page — Mechanics
-![Mechanics](assets/mechanics.png)
+![Mechanics](assets/mechanics-wireframe.png)
 ### Second Page — Dimensions
-![Dimensions](assets/dimensions.png)
+![Dimensions](assets/dimensions-wireframe.png)
 ### Third Page — Structures
-![Structures](assets/structures.png)
+![Structures](assets/structures-wireframe.png)
 ### Fourth Page — Sources
-![Sources](assets/sources.png)
+![Sources](assets/sources-wireframe.png)
+### Fifth Page — Login 
+![Sources](assets/login-wireframe.png)
+### Sixth Page — Profile Customization
+![Sources](assets/profile-custom-wireframe.png)
+### Seventh Page — Forums
+![Sources](assets/forums-wireframe.png)
