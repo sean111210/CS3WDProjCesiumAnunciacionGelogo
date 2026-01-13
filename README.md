@@ -38,20 +38,22 @@
 * The hamburger menu ☰ indicates the menu. When clicked, a panel will slide from the left side of the screen, providing more links. These links are miscellaneous, and only provide extra information, as most information in these links are not important to learning more about Minecraft (ex. Statistics or Meet the Creators)
 ---
 ### Home Page
-![Front Page](assets/frontpage-wireframe.png)
+![Front Page](assets/wireframes/frontpage-wireframe.png)
 ### Home Page (Expanded)
-![Front Page — Expanded](assets/frontpage-expanded-wireframe.png)
+![Front Page — Expanded](assets/wireframes/frontpage-expanded-wireframe.png)
 ### First Page — Mechanics
-![Mechanics](assets/mechanics-wireframe.png)
+![Mechanics](assets/wireframes/mechanics-wireframe.png)
 ### Second Page — Dimensions
-![Dimensions](assets/dimensions-wireframe.png)
+![Dimensions](assets/wireframes/dimensions-wireframe.png)
 ### Third Page — Structures
-![Structures](assets/structures-wireframe.png)
+![Structures](assets/wireframes/structures-wireframe.png)
 ### Fourth Page — Sources
-![Sources](assets/sources-wireframe.png)
+![Sources](assets/wireframes/sources-wireframe.png)
 ### Fifth Page — Login 
-![Sources](assets/login-wireframe.png)
+![Login](assets/wireframes/login-wireframe.png)
 ### Sixth Page — Profile Customization
-![Sources](assets/profile-custom-wireframe.png)
+![ProfileCustom](assets/wireframes/profile-custom-wireframe.png)
 ### Seventh Page — Forums
-![Sources](assets/forums-wireframe.png)
+![Forums](assets/wireframes/forums-wireframe.png)
+### Seventh Page — Forums (Expanded)
+![ForumsExpanded](assets/wireframes/forums-expanded-wireframe.png)
