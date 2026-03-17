@@ -10,19 +10,30 @@
         <link rel="icon" href="assets/favicon.png" type="image/png">
     </head>
     <body>
-        <header> 
+        <header>
             <div id="navbar">
                 <span id="menu" onClick="openNav()">&#9776;</span>
-                <span id="logo"><a href="index.html"><img src="assets/favicon.png" height="30px"></a></span>
+                <span id="logo">
+                    <a href="../../index.html"><img src="assets/favicon.png" height="30px" alt="Logo"></a>
+                </span>
                 <span style="margin-right: 100px;">BLOCK BY BLOCK</span>
+
+                <a href="public/profile-custom/profile-custom.html" class="profile-link">
+                    <div class="profile-rectangle">
+                        <div class="profile-pic">
+                            <div class="avatar-circle" id="preview-avatar"></div>
+                        </div>
+                        <span class="display-name">Sean</span>
+                    </div>
+                </a>
             </div>
         </header>
 
         <div id="sidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onClick="closeNav()">&times;</a>
-            <a href="public/misc/creators/creators.html">Meet the Makers</a>
-            <a href="public/misc/upcoming/upcoming.html">Upcoming</a>
-            <a href="public/misc/sources/sources.html">Sources</a>
+            <a href="/public/profile-custom/profile-custom.html">Customize Your Profile</a>
+            <a href="/public/forums/forums.html">Forums</a> 
+            <a href="/public/sources/sources.html">Sources</a>
         </div>
 
         <div class="hero-banner">
@@ -62,6 +73,7 @@
                 <div class="guide-title"><a href="public/structures/structures.html">DISCOVER</a></div>                
             </div>
         </div>
+    
     <script src="public/script.js"></script>
 
     <footer>
@@ -74,5 +86,12 @@
         <div style="text-align: right;"><span>Copyright © ANUNCIACION, GELOGO</span></div>
     </footer>
 
+    <script>
+        if (!localStorage.getItem("signedIn")) {
+            window.location.href = "public/signup/signup.html";
+        }
+    </script>
+
     </body>
+    
 </html>

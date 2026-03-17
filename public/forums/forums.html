@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Block by Block</title>
+        <link rel="stylesheet" href="forums.css">
+        <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="../fonts.css">
+        <link rel="icon" href="/assets/favicon.png" type="image/png">
+</head>
+    <body>
+    <header> 
+        <div id="navbar">
+            <span id="menu" onClick="openNav()">&#9776;</span>
+            <span id="logo"><a href="../../index.html"><img src="/assets/favicon.png" height="30px"></a></span>
+            <span style="margin-right: 100px;">BLOCK BY BLOCK</span>
+        </div>
+    </header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <ul>
+            <li class="home">HOME</li>
+            <li class="active">GENERAL</li>
+            <li>BUILDING</li>
+            <li>EXPLORATION</li>
+            <li>COMBAT</li>
+            <li>REDSTONE</li>
+            <li>FARMING</li>
+        </ul>
+    </aside>
+
+    <main class="main">
+
+    <div class="feed-header">
+        <h1>FEED</h1>
+        <div class="sort-area">
+            <!-- Updated button with ID -->
+            <button class="new-btn" id="newPostBtn">New +</button>
+        </div>
+    </div>
+</div>
+
+</main>
+
+<div id="newPostModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" id="closeModal">×</span>
+        <h2>Create New Post</h2>
+        
+        <form id="newPostForm">
+            <label for="postTitle">Title</label>
+            <input type="text" id="postTitle" placeholder="Enter a catchy title..." required>
+
+            <label for="postContent">Content</label>
+            <textarea id="postContent" rows="8" placeholder="Describe your build, farm, question..." required></textarea>
+
+            <div class="form-actions">
+                <button type="button" id="cancelPost">Cancel</button>
+                <button type="submit">Post</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</div>
+
+<script src="../script.js"></script>
+<script src="forums.js"></script>
+
+    </body>
+</html>

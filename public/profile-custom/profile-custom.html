@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Block by Block</title>
+        <link rel="stylesheet" href="profile-custom.css">
+        <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="../fonts.css">
+        <link rel="icon" href="../../assets/favicon.png" type="image/png">
+    </head>
+    <body>
+        <header> 
+            <div id="navbar">
+                <span id="menu" onClick="openNav()">&#9776;</span>
+                <span id="logo"><a href="../../index.html"><img src="assets/favicon.png" height="30px"></a></span>
+                <span style="margin-right: 100px;">BLOCK BY BLOCK</span>
+            </div>
+            <a href="profile/profile-custom.html" class="profile-link">
+            <div class="profile-rectangle">
+                <div class="profile-pic">
+                    <!-- You can replace with real image later -->
+                    <div class="avatar-circle" id="preview-avatar"></div>
+                </div>
+                <span class="display-name">Sean</span>
+            </div>
+        </a>
+        </header>
+
+    <div class="page-wrapper">
+
+        <div class="main-content">
+            <div class="profile-card">
+
+                <!-- PREVIEW -->
+                <div class="preview-section">
+                    <div class="preview-header">PREVIEW</div>
+                    <div class="preview-body">
+                        <div class="preview-avatar">
+                            <div class="avatar-circle" id="preview-avatar"></div>
+                        </div>
+                        <div class="preview-info">
+                            <div class="display-name-preview">
+                                <span id="preview-display-name-text">DISPLAY NAME</span>
+                            </div>
+                            <div class="meta-info" id="preview-meta">
+                                USERNAME || GENDER
+                            </div>
+                            <div class="about-me-preview" id="preview-about">
+                                <strong>ABOUT ME:</strong><br>
+                                No description yet.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CUSTOMIZATION FORM -->
+                <div class="section-title">CUSTOMIZATION</div>
+                <form id="profileForm">
+                    <div class="form-group">
+                        <label>Display Name</label>
+                        <input type="text" id="input-display-name" placeholder="DISPLAY NAME">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" id="input-username" placeholder="USERNAME">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Pronouns / Gender</label>
+                        <input type="text" id="input-gender-pronouns" placeholder="e.g. he/him, she/her, they/them">
+                    </div>
+
+                    <div class="form-group">
+                        <label>About Me</label>
+                        <textarea id="input-about-me" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit..."></textarea>
+                    </div>
+
+                    <button type="submit" style="margin-top: 20px; padding: 12px 32px; background: #8b8b8b; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">
+                        Save Profile
+                    </button>
+                </form>
+
+                <div class="section-title">PREFERENCES</div>
+                <div class="preferences-buttons">
+                    <button class="pref-button">EXPLORATION</button>
+                    <button class="pref-button">BUILDING</button>
+                    <button class="pref-button">COMBAT</button>
+                    <button class="pref-button">REDSTONE</button>
+                    <button class="pref-button">FARMING</button>
+                </div>
+
+            </div>
+        </div>
+
+        <footer>
+            <div style="text-align: left; padding-left: 20px;">
+                <a href="https://www.minecraft.net/en-us">Official Minecraft Page</a> <br>
+                <a href="https://x.com/Minecraft">Official X</a> <br>
+                <a href="https://www.youtube.com/@minecraft">Official YouTube</a> <br>
+                <a href="https://www.tiktok.com/@minecraft?lang=en">Official TikTok</a>
+            </div>
+            <div style="text-align: right; padding-right: 20px;"><span>Copyright © ANUNCIACION, GELOGO</span></div>
+        </footer>
+    </div>
+
+    <script>
+        // Optional: Add form submit handler if needed (e.g., save to localStorage)
+        document.getElementById("profileForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            // Simulate save
+            alert("Profile updated!");
+        });
+    </script>
+    <script src="../script.js"></script>
+    <script src="profile-custom.js"></script>
+
+    </body>
+</html>

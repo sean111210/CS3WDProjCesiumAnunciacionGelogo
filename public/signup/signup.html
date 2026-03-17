@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Block by Block</title>
+        <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="signup.css">
+        <link rel="stylesheet" href="../../public/fonts.css">
+        <link rel="icon" href="../../assets/favicon.png" type="image/png">
+    </head>
+    <body>
+
+    <div class="page-wrapper">
+
+    <div class="main-content">
+        <div class="login-card">
+            <h2 style="font-size:45px">SIGN IN</h2>
+            <div id="subtitle">Delve into the world of Block by Block!</div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Display Name</label>
+                    <input type="text" id="display-name" placeholder="Display Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="username" placeholder="Username" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+
+                <div class="gender-row">
+                    <strong>Gender:</strong><br>
+                    <label><input type="radio" name="gender" id="male" checked> Male</label>
+                    <label><input type="radio" name="gender" id="female"> Female</label>
+                </div>
+
+                <button type="submit">LOG IN</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div style="text-align: left;">
+            <a href="https://www.minecraft.net/en-us">Official Minecraft Page</a> <br>
+            <a href="https://x.com/Minecraft">Official X</a> <br>
+            <a href="https://www.youtube.com/@minecraft">Official YouTube</a> <br>
+            <a href="https://www.tiktok.com/@minecraft?lang=en">Official TikTok</a>
+        </div>
+        <div style="text-align: right;"><span>Copyright © ANUNCIACION, GELOGO</span></div>
+    </footer>
+
+</div>
+
+<script>
+    // prevent default + fake success
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        localStorage.setItem("signedIn", "true"); 
+        window.location.href = "../../index.html"; 
+    });
+</script>
+<script src="../script.js"></script>
+<script src="signup.js"></script>
+
+</body>
+</html>

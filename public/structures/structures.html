@@ -7,23 +7,35 @@
         <link rel="stylesheet" href="structures.css">
         <link rel="stylesheet" href="../styles.css">
         <link rel="stylesheet" href="../fonts.css">
-        <link rel="icon" href="/assets/favicon.png" type="image/png">
+        <link rel="icon" href="../../assets/favicon.png" type="image/png">
     </head>
     <body>
-        <header> 
+        <header>
             <div id="navbar">
                 <span id="menu" onClick="openNav()">&#9776;</span>
-                <span id="logo"><a href="../../index.html"><img src="/assets/favicon.png" height="30px"></a></span>
+                <span id="logo">
+                    <a href="../../index.html"><img src="../../assets/favicon.png" height="30px" alt="Logo"></a>
+                </span>
                 <span style="margin-right: 100px;">BLOCK BY BLOCK</span>
+
+                <a href="../profile-custom/profile-custom.html" class="profile-link">
+                    <div class="profile-rectangle">
+                        <div class="profile-pic">
+                            <div class="avatar-circle" id="preview-avatar"></div>
+                        </div>
+                        <span class="display-name">Sean</span>
+                    </div>
+                </a>
             </div>
         </header>
 
         <div id="sidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onClick="closeNav()">&times;</a>
-            <a href="/public/misc/creators/creators.html">Meet the Makers</a>
-            <a href="/public/misc/upcoming/upcoming.html">Upcoming</a> 
-            <a href="/public/misc/sources/sources.html">Sources</a>
+            <a href="../profile-custom/profile-custom.html">Customize Your Profile</a>
+            <a href="../forums/forums.html">Forums</a> 
+            <a href="../sources/sources.html">Sources</a>
         </div>
+
 
         <div class="page-banner">
             <img src="/assets/structures-bg.png" class="banner-img" style="position: absolute; top: 0; left: 0; z-index: 0;">
