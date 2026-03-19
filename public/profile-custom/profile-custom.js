@@ -125,6 +125,26 @@ window.addEventListener("load", () => {
     }
 });
 
+function logout() {
+    // First confirmation
+    const confirmLogout = confirm("Are you sure you want to log out?");
+    
+    if (!confirmLogout) return;
+
+    // Second confirmation
+    const confirmRedirect = confirm("Return to sign up page?");
+    
+    if (!confirmRedirect) return;
+
+    // Clear stored data
+    localStorage.removeItem("signedIn");
+    localStorage.removeItem("userProfile");
+    localStorage.removeItem("signedUp");
+
+    // Redirect to sign up page
+    window.location.href = "../signup/signup.html";
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const raw = localStorage.getItem("signedUp");
     console.log("Raw stored data:", raw);
