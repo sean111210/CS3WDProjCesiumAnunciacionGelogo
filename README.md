@@ -101,3 +101,116 @@ The following is used to implement the CRUD system:
 ![Forums](assets/wireframes/forums-wireframe.png)
 ### Seventh Page — Forums (Expanded)
 ![ForumsExpanded](assets/wireframes/forums-expanded-wireframe.png)
+
+# FINAL MODIFICATION PROPOSAL
+
+---
+
+## Design and Narrative
+
+### Purpose
+The last change of Block by Block is the implementation of Full CRUD (Create, Read, Update, Delete) with the help of localStorage. This enables the site to cross over into the domain of being purely informational and be an interactive site in which users are able to control their own information.
+
+The aim of this update will be to:
+- enable users to form their profile and store it.
+- Show user information on various pages.
+- Allow users edit and update the information saved.
+- Have a mechanism of deleting stored information by means of a logout system.
+
+---
+
+### How It Will Be Used
+
+#### Create (C)
+The Login page requires the user to input his/her data (email, username, display name, gender). This data is stored to the local storage.
+
+#### Read (R)
+The data stored is accessed and presented in:
+- The user display (username) bar.
+- The profile preview section
+- Other pertinent pages of the site.
+
+#### Update (U)
+In the Profile Customization page, users are allowed to update their profile information. After saving, the revised data is stored to replace the earlier data in the localStorage and this will be immediately reflected in the preview.
+
+#### Delete (D)
+There is a log out button where users can log out. An affirmative prompt makes certain that what is done is not accidental. On confirmation, the data stored is deleted and the user is taken to Sign-In page.
+
+---
+
+## Updated Design / Features
+
+### Login Page (Updated)
+User input is now stored in the local storage of the login page. It also traces the presence of a user in the system with the help of a stored flag.
+
+---
+
+In this version, the user is able to customize the profile by selecting additional background colors and additional features that suit their taste and needs (Myspace, 2009).<|human|>Profile Customization Page (Revised) In this version, the user can customize the profile by using more background color options and more features that fits the taste and needs (Myspace, 2009).
+#### This page now includes:
+- User information input fields, which are editable.
+- Real time live preview.
+- Save feature which renews stored data.
+- A logout button that erases data stored.
+
+---
+
+### Navigation Bar (Updated)
+The navigation bar has also been changed so that it will show the real username rather than a place holder. This is accessed through local storage.
+
+---
+
+### Logout System (New Feature)
+#### The logout system includes:
+- First confirmation: “You are sure you want to log out?
+- A second assurance: “Go back to registration form?
+- Clearing of stored data
+- Visiting the login page automatically.
+
+---
+
+## Wireframe Updates
+
+The modified Profile Customization Page displays several enhancements to the original version, which aims to provide the user with a more organized interface and the option to add a personal picture.<|human|>Profile Customization Page (Modified) This version is similar to the original one but it has some additions that are made in order to offer the user a better structured interface and the possibility to add personally owned picture.
+#### Added:
+- Live preview panel
+- Editable fields
+- Save button (Update function)
+- Delete button (Logout functionality)
+
+---
+
+### Navigation Bar (Modified)
+#### Added:
+- Dynamic username display
+
+---
+
+### System Flow
+The new system is done as follows:
+1. User logs in → data is saved
+2. Information is presented between pages.
+3. User makes profile changes of user profile, the information is changed.
+4. User logs out → data is deleted
+
+---
+
+## JavaScript Implementation
+
+The following is used to implement the CRUD system:
+
+#### Create / Update
+`localStorage.setItem()`
+
+#### Read
+`localStorage.getItem()`
+
+#### Delete
+`localStorage.removeItem()`
+
+---
+
+### JavaScript is also used to:
+- Change the preview of the profile dynamically.
+- Match form entries with records.
+- Monitor access to and exit of users.
+- Manage page redirection

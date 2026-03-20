@@ -22,7 +22,7 @@
                     <!-- You can replace with real image later -->
                     <div class="avatar-circle" id="preview-avatar"></div>
                 </div>
-                <span class="display-name">Sean</span>
+                    <span class="display-name" id="nav-username">Username</span>
             </div>
         </a>
         </header>
@@ -80,6 +80,18 @@
                     <button type="submit" style="margin-top: 20px; padding: 12px 32px; background: #8b8b8b; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">
                         Save Profile
                     </button>
+                    <button onclick="logout()" 
+                    style="margin-top: 20px; padding: 12px 32px; background: #c0392b; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">
+                    LOG OUT
+                    </button>
+                    <script>
+function logout() {
+    localStorage.clear(); // or removeItem if you prefer
+
+    // redirect to signup page
+    window.location.href = "../signup/signup.html";
+}
+</script>
                 </form>
 
                 <div class="section-title">PREFERENCES</div>
