@@ -91,6 +91,40 @@ function logout() {
     // redirect to signup page
     window.location.href = "../signup/signup.html";
 }
+const avatarInput = document.getElementById("input-avatar");
+const previewAvatar = document.querySelectorAll("#preview-avatar");
+
+// Load saved avatar on page load
+window.addEventListener("DOMContentLoaded", () => {
+    const savedAvatar = localStorage.getItem("profileAvatar");
+    if (savedAvatar) {
+        previewAvatar.forEach(el => {
+            el.style.backgroundImage = `url(${savedAvatar})`;
+        });
+    }
+});
+
+// When user selects an image
+avatarInput.addEventListener("change", function () {
+    const file = this.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+        const imageData = e.target.result;
+
+        // Update preview
+        previewAvatar.forEach(el => {
+            el.style.backgroundImage = `url(${imageData})`;
+        });
+
+        // Save to localStorage
+        localStorage.setItem("profileAvatar", imageData);
+    };
+
+    reader.readAsDataURL(file);
+});
 </script>
                 </form>
 
