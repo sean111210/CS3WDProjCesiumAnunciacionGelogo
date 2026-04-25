@@ -45,19 +45,23 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const title   = document.getElementById('postTitle').value.trim();
-        const content = document.getElementById('postContent').value.trim();
+        const title    = document.getElementById('postTitle').value.trim();
+        const category = document.getElementById('postCategory').value;   // ← new
+        const content  = document.getElementById('postContent').value.trim();
 
-        if (!title || !content) return;
+        if (!title || !category || !content) return;
 
         // Create new post card
         const newCard = document.createElement('div');
         newCard.className = 'post-card';
+        newCard.dataset.category = category;   // ← important: store category for filtering later
+
         newCard.onclick = () => newCard.classList.toggle('expanded');
 
         newCard.innerHTML = `
             <div class="post-header">
                 <div class="post-title">${escapeHtml(title)}</div>
+                <div class="post-category-tag">${category.toUpperCase()}</div>  <!-- nice visual touch -->
                 <div class="more-dots">⋯</div>
             </div>
             <div class="post-main">
@@ -74,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        // Insert at the top of the feed (after header)
+        // Insert at the top
         const firstCard = mainFeed.querySelector('.post-card');
         if (firstCard) {
             mainFeed.insertBefore(newCard, firstCard);
@@ -82,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
             mainFeed.appendChild(newCard);
         }
 
-        // Close modal & reset
         closeModalFunc();
     });
 });
@@ -117,6 +120,36 @@ function toggleCommentBox(btn) {
     // Stop click from toggling expand/collapse
     event.stopPropagation();
 }
+
+// Category filtering
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebarItems = document.querySelectorAll('.sidebar li');
+    const postCards = () => document.querySelectorAll('.post-card'); // live collection
+
+    sidebarItems.forEach(item => {
+        item.addEventListener('click', () => {
+            sidebarItems.forEach(li => li.classList.remove('active'));
+            item.classList.add('active');
+
+            const selected = item.textContent.trim().toLowerCase();
+            let visibleCount = 0;
+
+            postCards().forEach(card => {
+                const cardCat = card.dataset.category;
+                const shouldShow = (selected === 'general' || cardCat === selected);
+                card.style.display = shouldShow ? '' : 'none';
+                if (shouldShow) visibleCount++;
+            });
+
+            // Show/hide empty state
+            document.getElementById('noPostsMessage').style.display = 
+                visibleCount === 0 ? 'block' : 'none';
+        });
+    });
+
+    // Optional: trigger GENERAL view on page load (already active by HTML)
+    // You can also call the filter logic here if you want to be explicit
+});
 
 document.addEventListener('click', function(e) {
     // Handle cancel
@@ -174,3 +207,4 @@ function escapeHtml(unsafe) {
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
 }
+

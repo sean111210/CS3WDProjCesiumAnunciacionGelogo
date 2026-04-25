@@ -52,8 +52,7 @@ limits.forEach(({id, max}) => {
     updateCounter(); // initial count (will use saved value if present)
 });
 
-// Now, the submit handler (fixed to match HTML form ID "loginForm")
-const form = document.getElementById("loginForm");  // ← Fixed: was "signupForm"
+const form = document.getElementById("loginForm");  
 
 form.addEventListener("submit", function(e) {
     e.preventDefault();
@@ -65,16 +64,12 @@ form.addEventListener("submit", function(e) {
         username:    document.getElementById("username").value.trim(),
         gender:      document.querySelector('input[name="gender"]:checked')?.value || "Not specified",
         joined:      new Date().toISOString()
-        // password: intentionally not saved (security)
     };
 
     // Save profile data to localStorage (so profile-custom.html can read it later)
     localStorage.setItem("userProfile", JSON.stringify(data));
     localStorage.setItem("signedIn", "true");  // ← Consistent with your inline script; was "signedUp"
 
-    // Redirect – assuming profile-custom.html is in the same folder or adjust as needed
-    // Based on your structure (signup in public/signup/), try this for root/profile-custom.html
-    // If it doesn't work, test "../../profile-custom.html" or "../profile-custom.html"
     window.location.href = "../../index.html";  // ← Change to profile-custom as per earlier goal
 
     // Fallback alert (remove once working)

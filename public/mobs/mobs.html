@@ -8,14 +8,26 @@
         <link rel="stylesheet" href="../styles.css">
         <link rel="stylesheet" href="../fonts.css">
         <link rel="icon" href="/assets/favicon.png" type="image/png">
+        <style>
+            .mob-content p {
+                padding: 0 20px;
+                line-height: 1.5;
+            }
+        </style>
     </head>
     <body>
         <header> 
             <div id="navbar">
                 <span id="menu" onClick="openNav()">&#9776;</span>
-                <span id="logo"><a href="../../index.html"><img src="/assets/favicon.png" height="30px"></a></span>
+                <span id="logo"><a href="../../index.html"><img src="../../assets/favicon.png" height="30px"></a></span>
                 <span style="margin-right: 100px;">BLOCK BY BLOCK</span>
             </div>
+
+            <a href="../profile-custom/profile-custom.html" class="profile-link">
+                <div class="profile-rectangle">
+                    <span class="display-name" id="nav-display-name"></span>
+                </div>
+            </a>
         </header>
 
         <div id="sidenav" class="sidenav">
@@ -33,7 +45,7 @@
         </div>
 
         <div class="gradient" style="--color-top: #292929; --color-bottom: #171717;">
-            <div class="section">
+            <div class="section" style="text-align:center; padding: 0 20px">
                 <h1>MOBS</h1>
                 <p> Mobs are an integral part of the Minecraft experience. As AI-contolled entities, they are littered all around the game world and 
                     contribute to its dynamic environment. From the villager and sheep to the creeper and zombie, mobs add depth and excitement to gameplay.

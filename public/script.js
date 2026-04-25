@@ -25,3 +25,15 @@ function openNav() {
 function closeNav() {
   document.getElementById("sidenav").style.width = "0";
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const raw = localStorage.getItem("userProfile");
+    if (!raw) return;
+
+    const data = JSON.parse(raw);
+
+    const navName = document.getElementById("nav-display-name");
+    if (navName) {
+        navName.textContent = data.displayName || "Username";
+    }
+});

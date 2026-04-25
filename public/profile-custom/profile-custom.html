@@ -13,19 +13,23 @@
         <header> 
             <div id="navbar">
                 <span id="menu" onClick="openNav()">&#9776;</span>
-                <span id="logo"><a href="../../index.html"><img src="assets/favicon.png" height="30px"></a></span>
+                <span id="logo"><a href="../../index.html"><img src="../../assets/favicon.png" height="30px"></a></span>
                 <span style="margin-right: 100px;">BLOCK BY BLOCK</span>
             </div>
-            <a href="profile/profile-custom.html" class="profile-link">
-            <div class="profile-rectangle">
-                <div class="profile-pic">
-                    <!-- You can replace with real image later -->
-                    <div class="avatar-circle" id="preview-avatar"></div>
+
+            <a href="../profile-custom/profile-custom.html" class="profile-link">
+                <div class="profile-rectangle">
+                    <span class="display-name" id="nav-display-name"></span>
                 </div>
-                    <span class="display-name" id="nav-username">Username</span>
-            </div>
-        </a>
+            </a>
         </header>
+
+        <div id="sidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onClick="closeNav()">&times;</a>
+            <a href="../profile-custom/profile-custom.html">Customize Your Profile</a>
+            <a href="../forums/forums.html">Forums</a> 
+            <a href="../sources/sources.html">Sources</a>
+        </div>
 
     <div class="page-wrapper">
 

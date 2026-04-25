@@ -1,4 +1,12 @@
-// Global function - accessible everywhere
+
+function getProfile() {
+    return JSON.parse(localStorage.getItem("userProfile"));
+}
+
+function saveProfile(profile) {
+    localStorage.setItem("userProfile", JSON.stringify(profile));
+}
+
 function updatePreview() {
     const displayName = document.getElementById("input-display-name")?.value.trim() || "DISPLAY NAME";
     document.getElementById("preview-display-name-text").textContent = displayName;
@@ -12,48 +20,52 @@ function updatePreview() {
         ? `<strong>ABOUT ME:</strong><br>${about.replace(/\n/g, '<br>')}`
         : `<strong>ABOUT ME:</strong><br>No description yet.`;
 
-    const initials = displayName.split(/\s+/).map(w => w[0]?.toUpperCase() || '').join('').slice(0,2) || "✏️";
+    const initials = displayName
+        .split(/\s+/)
+        .map(w => w[0]?.toUpperCase() || '')
+        .join('')
+        .slice(0,2) || "✏️";
+
     document.getElementById("preview-avatar").textContent = initials;
+
+    const navName = document.getElementById("nav-display-name");
+    if (navName) {
+        navName.textContent = displayName;
+    }
 }
 
 window.addEventListener("load", () => {
     console.log("profile-custom.js loaded – initializing");
 
-    // 1. First try to load and apply saved data
-    const saved = localStorage.getItem("userProfile");
-    let hasSavedData = false;
+    // Load current user data
+    const raw = localStorage.getItem("userProfile");
+    const data = raw ? JSON.parse(raw) : null;
+    
+    if (data) {
+        console.log("Loaded current user:", data);
 
-    if (saved) {
-        try {
-            const data = JSON.parse(saved);
-            console.log("Found saved profile:", data);
+        const mappings = [
+            ["input-display-name",    data.displayName],
+            ["input-username",        data.username],
+            ["input-gender-pronouns", data.genderPronouns],
+            ["input-about-me",        data.about]
+        ];
 
-            const mappings = [
-                ["input-display-name",    data.displayName],
-                ["input-username",        data.username],
-                ["input-gender-pronouns", data.genderPronouns],
-                ["input-about-me",        data.about]
-            ];
-
-            mappings.forEach(([id, value]) => {
-                const el = document.getElementById(id);
-                if (el && value !== undefined && value !== null) {
-                    el.value = value;
-                }
-            });
-
-            hasSavedData = true;
-        } catch (err) {
-            console.warn("Could not parse saved profile:", err);
-        }
+        mappings.forEach(([id, value]) => {
+            const el = document.getElementById(id);
+            if (el && value !== undefined && value !== null) {
+                el.value = value;
+            }
+        });
+    } else {
+        console.warn("No current user found.");
     }
 
-    // 2. Apply character limit + counters to all fields
     const limits = [
-        { id: "input-display-name",    max: 20,  label: "Display Name" },
-        { id: "input-username",        max: 20,  label: "Username"     },
-        { id: "input-gender-pronouns", max: 15,  label: "Pronouns"     },
-        { id: "input-about-me",        max: 100, label: "About Me"     }
+        { id: "input-display-name",    max: 20 },
+        { id: "input-username",        max: 20 },
+        { id: "input-gender-pronouns", max: 15 },
+        { id: "input-about-me",        max: 100 }
     ];
 
     limits.forEach(({id, max}) => {
@@ -62,24 +74,15 @@ window.addEventListener("load", () => {
 
         const counter = document.createElement("div");
         counter.style.cssText = "font-size:0.85em; color:#888; margin-top:6px; text-align:right;";
-        counter.textContent = `0 / ${max}`;
         field.parentNode.insertBefore(counter, field.nextSibling);
 
         const updateCounter = () => {
             const length = field.value.length;
             counter.textContent = `${length} / ${max}`;
-            counter.style.color = length >= max ? "#e74c3c" 
-                                 : length > max - 5 ? "#f39c12" : "#888";
+            counter.style.color =
+                length >= max ? "#e74c3c" :
+                length > max - 5 ? "#f39c12" : "#888";
         };
-
-        field.addEventListener("keydown", (e) => {
-            if (field.value.length >= max) {
-                const allowed = e.ctrlKey || e.metaKey || 
-                    ["Backspace","Delete","ArrowLeft","ArrowRight","ArrowUp","ArrowDown",
-                     "Home","End","Tab","Escape"].includes(e.key);
-                if (!allowed) e.preventDefault();
-            }
-        });
 
         field.addEventListener("input", () => {
             if (field.value.length > max) {
@@ -88,65 +91,57 @@ window.addEventListener("load", () => {
             updateCounter();
         });
 
-        field.addEventListener("paste", () => {
-            setTimeout(() => {
-                if (field.value.length > max) {
-                    field.value = field.value.substring(0, max);
-                }
-                updateCounter();
-            }, 0);
-        });
-
-        updateCounter(); // initial count (will use saved value if present)
+        updateCounter();
     });
 
-    // 3. Finally update the preview – now with saved values if any
+    ["input-display-name", "input-username", "input-gender-pronouns", "input-about-me"]
+    .forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.addEventListener("input", updatePreview);
+        }
+    });
+
     updatePreview();
 
-    // 4. Handle form submit
     const form = document.getElementById("profileForm");
+
     if (form) {
         form.addEventListener("submit", (e) => {
             e.preventDefault();
 
             const profile = {
-                displayName:     document.getElementById("input-display-name")?.value.trim()     || "",
-                username:        document.getElementById("input-username")?.value.trim()         || "",
-                genderPronouns:  document.getElementById("input-gender-pronouns")?.value.trim()  || "",
-                about:           document.getElementById("input-about-me")?.value.trim()         || "",
+                displayName:     document.getElementById("input-display-name")?.value.trim() || "",
+                username:        document.getElementById("input-username")?.value.trim() || "",
+                genderPronouns:  document.getElementById("input-gender-pronouns")?.value.trim() || "",
+                about:           document.getElementById("input-about-me")?.value.trim() || "",
                 lastUpdated:     new Date().toISOString()
             };
 
-            localStorage.setItem("userProfile", JSON.stringify(profile));
+            saveProfile(profile);
             updatePreview();
 
-            alert("Profile saved! Preview updated.");
+            alert("Profile saved!");
         });
     }
 });
 
-function logout() {
-    // First confirmation
-    const confirmLogout = confirm("Are you sure you want to log out?");
-    
-    if (!confirmLogout) return;
 
-    // Second confirmation
+
+function logout() {
+    const confirmDelete = confirm("Are you sure you want to log out? This will delete your account and all your data.");
+    if (!confirmDelete) return;
+
     const confirmRedirect = confirm("Return to sign up page?");
-    
     if (!confirmRedirect) return;
 
-    // Clear stored data
-    localStorage.removeItem("signedIn");
-    localStorage.removeItem("userProfile");
-    localStorage.removeItem("signedUp");
+    localStorage.removeItem("currentUser");
 
-    // Redirect to sign up page
     window.location.href = "../signup/signup.html";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const raw = localStorage.getItem("signedUp");
+    const raw = localStorage.getItem("userProfile");
     console.log("Raw stored data:", raw);
 
     if (!raw) {
@@ -162,7 +157,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("preview-display-name-text").textContent = data.displayName || "???";
         document.getElementById("preview-meta").textContent = 
             (data.username || "???") + " || " + (data.gender || "???");
+        document.getElementById("nav-display-name").textContent = data.displayName || "Username";
     } catch (e) {
         console.error("Parse error:", e);
     }
 });
+

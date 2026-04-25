@@ -15,58 +15,58 @@ body {
     box-shadow: 0 0 20px rgba(0,0,0,0.08); /* subtle shadow for depth */
 }
 
-        .main-content {
-            flex: 1;
-            padding: 32px 24px;
-            display: flex;
-            justify-content: center;
-        }
+.main-content {
+    flex: 1;
+    padding: 32px 24px;
+    display: flex;
+    justify-content: center;
+}
 
-        .profile-card {
-            background: #222222;
-            border: 1px solid #1d1d1d;
-            border-radius: 6px;
-            width: 100%;
-            max-width: 85%;;          /* slightly wider card to feel balanced */
-            padding: 28px;
-            padding-top: 0px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-        }
+.profile-card {
+    background: #222222;
+    border: 1px solid #1d1d1d;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 85%;;          /* slightly wider card to feel balanced */
+    padding: 28px;
+    padding-top: 0px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
 
-        .preview-section {
-            margin-bottom: 32px;
-            border: 1px solid #353535;
-            border-radius: 6px;
-            overflow: hidden;
-            background: #444444;
-        }
+.preview-section {
+    margin-bottom: 32px;
+    border: 1px solid #353535;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #444444;
+}
 
-        .preview-header {
-            background: #343434;
-            padding: 12px 16px;
-            font-weight: bold;
-            font-size: 14px;
-            text-transform: uppercase;
-            color: #ffffff;
-            border-bottom: 1px solid #2a2a2a;
-        }
+.preview-header {
+    background: #343434;
+    padding: 12px 16px;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #ffffff;
+    border-bottom: 1px solid #2a2a2a;
+}
 
-        .preview-body {
-            display: flex;
-            padding: 24px;
-            gap: 24px;
-            flex-wrap: wrap; /* responsive: stacks on very small screens */
-        }
+.preview-body {
+    display: flex;
+    padding: 24px;
+    gap: 24px;
+    flex-wrap: wrap; /* responsive: stacks on very small screens */
+}
 
-        .preview-avatar {
-            flex: 0 0 30%;                 /* ≈30% width */
-            max-width: 140px;
-            text-align: center;
-        }
+.preview-avatar {
+    flex: 0 0 30%;                 /* ≈30% width */
+    max-width: 140px;
+    text-align: center;
+}
 
-        .avatar-circle {
-            width: 100%;
-            aspect-ratio: 1 / 1;
+.avatar-circle {
+    width: 100%;
+    aspect-ratio: 1 / 1;
             background: #272727;
             border-radius: 50%;
             display: flex;
