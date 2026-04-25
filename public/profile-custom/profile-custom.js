@@ -11,12 +11,14 @@ function updatePreview() {
     const displayName = document.getElementById("input-display-name")?.value.trim() || "DISPLAY NAME";
     document.getElementById("preview-display-name-text").textContent = displayName;
 
+
     const username = document.getElementById("input-username")?.value.trim() || "USERNAME";
     const genderPronouns = document.getElementById("input-gender-pronouns")?.value.trim() || "GENDER";
     document.getElementById("preview-meta").textContent = `${username} || ${genderPronouns}`;
 
+
     const about = document.getElementById("input-about-me")?.value.trim();
-    document.getElementById("preview-about").innerHTML = about 
+    document.getElementById("preview-about").innerHTML = about
         ? `<strong>ABOUT ME:</strong><br>${about.replace(/\n/g, '<br>')}`
         : `<strong>ABOUT ME:</strong><br>No description yet.`;
 
@@ -33,6 +35,7 @@ function updatePreview() {
         navName.textContent = displayName;
     }
 }
+
 
 window.addEventListener("load", () => {
     console.log("profile-custom.js loaded – initializing");
@@ -68,13 +71,16 @@ window.addEventListener("load", () => {
         { id: "input-about-me",        max: 100 }
     ];
 
+
     limits.forEach(({id, max}) => {
         const field = document.getElementById(id);
         if (!field) return;
 
+
         const counter = document.createElement("div");
         counter.style.cssText = "font-size:0.85em; color:#888; margin-top:6px; text-align:right;";
         field.parentNode.insertBefore(counter, field.nextSibling);
+
 
         const updateCounter = () => {
             const length = field.value.length;
@@ -110,6 +116,7 @@ window.addEventListener("load", () => {
         form.addEventListener("submit", (e) => {
             e.preventDefault();
 
+
             const profile = {
                 displayName:     document.getElementById("input-display-name")?.value.trim() || "",
                 username:        document.getElementById("input-username")?.value.trim() || "",
@@ -140,9 +147,28 @@ function logout() {
     window.location.href = "../signup/signup.html";
 }
 
+function deleteAccount() {
+    const confirmDelete = confirm("Are you sure you want to delete your account? This action cannot be reversed.");
+    if (!confirmDelete) return;
+
+
+    const confirmRedirect = confirm("Return to sign up page?");
+    if (!confirmRedirect) return;
+
+
+    localStorage.removeItem("currentUser");
+    localStorage.removeItem("signedUp");
+    localStorage.removeItem("userProfile");
+
+
+    window.location.href = "../signup/signup.html";
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const raw = localStorage.getItem("userProfile");
     console.log("Raw stored data:", raw);
+
 
     if (!raw) {
         console.log("No profile data found");
@@ -150,16 +176,17 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+
     try {
         const data = JSON.parse(raw);
         console.log("Parsed data:", data);
 
+
         document.getElementById("preview-display-name-text").textContent = data.displayName || "???";
-        document.getElementById("preview-meta").textContent = 
+        document.getElementById("preview-meta").textContent =
             (data.username || "???") + " || " + (data.gender || "???");
         document.getElementById("nav-display-name").textContent = data.displayName || "Username";
     } catch (e) {
         console.error("Parse error:", e);
     }
 });
-
