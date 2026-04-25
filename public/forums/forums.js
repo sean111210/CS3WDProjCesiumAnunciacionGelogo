@@ -1,5 +1,64 @@
+function getDisplayName() {
+    const raw = localStorage.getItem("userProfile");
+    if (!raw) return "you";
+
+    const data = JSON.parse(raw);
+    return data.displayName || "you";
+}
+
+function getPosts() {
+    return JSON.parse(localStorage.getItem("posts")) || [];
+}
+
+function savePosts(posts) {
+    localStorage.setItem("posts", JSON.stringify(posts));
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("postsContainer");
+
+    getPosts().forEach(post => {
+        container.prepend(createPostElement(post));
+    });
+});
+
+function createPostElement(post) {
+    const card = document.createElement("div");
+    card.className = "post-card";
+    card.dataset.id = post.id;
+
+    card.innerHTML = `
+        <div class="post-header">
+            <div class="post-title">${escapeHtml(post.title)}</div>
+
+            <div class="post-actions">
+                <button class="delete-post">🗑</button>
+            </div>
+        </div>
+
+        <div class="post-main">
+            <div class="post-content">
+                <div class="post-text">
+                    ${escapeHtml(post.content.substring(0, 280))}${post.content.length > 280 ? "..." : ""}
+                </div>
+            </div>
+        </div>
+
+        <div class="expanded-content">
+            <div class="user-mentions">
+                <div class="user-tag">@${escapeHtml(post.displayName)} • Just posted this!</div>
+            </div>
+        </div>
+    `;
+
+    card.onclick = () => card.classList.toggle("expanded");
+
+    return card;
+}
+
 document.addEventListener('click', function(e) {
     const cards = document.querySelectorAll('.post-card');
+
     let clickedInside = false;
     for (const card of cards) {
         if (card.contains(e.target)) {
@@ -7,90 +66,86 @@ document.addEventListener('click', function(e) {
             break;
         }
     }
+
     if (!clickedInside) {
         cards.forEach(card => card.classList.remove('expanded'));
     }
 });
-// New Post Modal functionality
+
 document.addEventListener('DOMContentLoaded', () => {
-    const newPostBtn   = document.getElementById('newPostBtn');
-    const modal        = document.getElementById('newPostModal');
-    const closeModal   = document.getElementById('closeModal');
-    const cancelBtn    = document.getElementById('cancelPost');
-    const form         = document.getElementById('newPostForm');
-    const mainFeed     = document.querySelector('.main'); // where new cards are appended
 
-    // Open modal
-    newPostBtn.addEventListener('click', () => {
-        modal.style.display = 'block';
-        form.reset(); // clear previous input
-    });
+    const newPostBtn = document.getElementById('newPostBtn');
+    const modal = document.getElementById('newPostModal');
+    const closeModal = document.getElementById('closeModal');
+    const cancelBtn = document.getElementById('cancelPost');
+    const form = document.getElementById('newPostForm');
+    const mainFeed = document.getElementById('postsContainer');
 
-    // Close modal (× or Cancel)
+    if (!newPostBtn || !modal || !form) return;
+
     function closeModalFunc() {
         modal.style.display = 'none';
     }
 
+    newPostBtn.addEventListener('click', () => {
+        modal.style.display = 'block';
+        form.reset();
+    });
+
     closeModal.addEventListener('click', closeModalFunc);
     cancelBtn.addEventListener('click', closeModalFunc);
 
-    // Close when clicking outside modal content
     window.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeModalFunc();
-        }
+        if (e.target === modal) closeModalFunc();
     });
 
-    // Handle form submission → create new post card
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const title    = document.getElementById('postTitle').value.trim();
-        const category = document.getElementById('postCategory').value;   // ← new
-        const content  = document.getElementById('postContent').value.trim();
+        const title = document.getElementById('postTitle').value.trim();
+        const content = document.getElementById('postContent').value.trim();
+        const displayName = getDisplayName();
 
-        if (!title || !category || !content) return;
+        if (!title || !content) return;
 
-        // Create new post card
-        const newCard = document.createElement('div');
-        newCard.className = 'post-card';
-        newCard.dataset.category = category;   // ← important: store category for filtering later
+        const post = {
+            id: Date.now().toString(),
+            title,
+            content,
+            displayName
+        };
 
-        newCard.onclick = () => newCard.classList.toggle('expanded');
+        // SAVE
+        const posts = getPosts();
+        posts.unshift(post);
+        savePosts(posts);
 
-        newCard.innerHTML = `
-            <div class="post-header">
-                <div class="post-title">${escapeHtml(title)}</div>
-                <div class="post-category-tag">${category.toUpperCase()}</div>  <!-- nice visual touch -->
-                <div class="more-dots">⋯</div>
-            </div>
-            <div class="post-main">
-                <div class="post-content">
-                    <div class="post-text">
-                        ${escapeHtml(content.substring(0, 280))}${content.length > 280 ? '...' : ''}
-                    </div>
-                </div>
-            </div>
-            <div class="expanded-content">
-                <div class="user-mentions">
-                    <div class="user-tag">@you • Just posted this!</div>
-                </div>
-            </div>
-        `;
-
-        // Insert at the top
-        const firstCard = mainFeed.querySelector('.post-card');
-        if (firstCard) {
-            mainFeed.insertBefore(newCard, firstCard);
-        } else {
-            mainFeed.appendChild(newCard);
-        }
+        // RENDER
+        mainFeed.prepend(createPostElement(post));
 
         closeModalFunc();
     });
 });
 
-// Simple HTML escape to prevent XSS (basic version)
+document.addEventListener("click", function (e) {
+    const deleteBtn = e.target.closest(".delete-post");
+    if (!deleteBtn) return;
+
+    const postCard = deleteBtn.closest(".post-card");
+    if (!postCard) return;
+
+    const confirmDelete = confirm("Delete this post?");
+    if (!confirmDelete) return;
+
+    const postId = postCard.dataset.id;
+
+    let posts = getPosts();
+    posts = posts.filter(p => p.id !== postId);
+    savePosts(posts);
+
+    postCard.remove();
+});
+
 function escapeHtml(unsafe) {
     return unsafe
         .replace(/&/g, "&amp;")
@@ -99,112 +154,3 @@ function escapeHtml(unsafe) {
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
 }
-
-function toggleCommentBox(btn) {
-    const postCard = btn.closest('.post-card');
-    const expanded = postCard.classList.contains('expanded');
-    
-    // If not already expanded, open it first
-    if (!expanded) {
-        postCard.classList.add('expanded');
-    }
-    
-    const commentForm = postCard.querySelector('.comment-form');
-    commentForm.style.display = commentForm.style.display === 'none' ? 'block' : 'none';
-    
-    // Focus the textarea when opening
-    if (commentForm.style.display === 'block') {
-        commentForm.querySelector('textarea').focus();
-    }
-    
-    // Stop click from toggling expand/collapse
-    event.stopPropagation();
-}
-
-// Category filtering
-document.addEventListener('DOMContentLoaded', () => {
-    const sidebarItems = document.querySelectorAll('.sidebar li');
-    const postCards = () => document.querySelectorAll('.post-card'); // live collection
-
-    sidebarItems.forEach(item => {
-        item.addEventListener('click', () => {
-            sidebarItems.forEach(li => li.classList.remove('active'));
-            item.classList.add('active');
-
-            const selected = item.textContent.trim().toLowerCase();
-            let visibleCount = 0;
-
-            postCards().forEach(card => {
-                const cardCat = card.dataset.category;
-                const shouldShow = (selected === 'general' || cardCat === selected);
-                card.style.display = shouldShow ? '' : 'none';
-                if (shouldShow) visibleCount++;
-            });
-
-            // Show/hide empty state
-            document.getElementById('noPostsMessage').style.display = 
-                visibleCount === 0 ? 'block' : 'none';
-        });
-    });
-
-    // Optional: trigger GENERAL view on page load (already active by HTML)
-    // You can also call the filter logic here if you want to be explicit
-});
-
-document.addEventListener('click', function(e) {
-    // Handle cancel
-    if (e.target.classList.contains('cancel-comment')) {
-        const form = e.target.closest('.comment-form');
-        form.style.display = 'none';
-        form.querySelector('textarea').value = '';
-        e.stopPropagation();
-    }
-    
-    // Handle post comment
-    if (e.target.classList.contains('post-comment')) {
-        const form = e.target.closest('.comment-form');
-        const textarea = form.querySelector('.comment-input');
-        const text = textarea.value.trim();
-        
-        if (!text) return;
-        
-        const postCard = form.closest('.post-card');
-        const commentsSection = postCard.querySelector('.comments-section');
-        const countEl = postCard.querySelector('.comment-count');
-        
-        // Create comment element
-        const commentDiv = document.createElement('div');
-        commentDiv.className = 'comment';
-        commentDiv.innerHTML = `
-            <div class="comment-avatar"></div>
-            <div class="comment-body">
-                <div class="comment-author">@you</div>
-                <div class="comment-text">${escapeHtml(text)}</div>
-                <div class="comment-time">just now</div>
-            </div>
-        `;
-        
-        commentsSection.appendChild(commentDiv);
-        
-        // Update count
-        let count = parseInt(countEl.textContent) || 0;
-        countEl.textContent = count + 1;
-        
-        // Reset & hide form
-        textarea.value = '';
-        form.style.display = 'none';
-        
-        e.stopPropagation();
-    }
-});
-
-// Reuse your existing escape function (or add this if missing)
-function escapeHtml(unsafe) {
-    return unsafe
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-}
-

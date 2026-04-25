@@ -32,56 +32,29 @@
         </div>
 
         <div class="layout">
-
-            <aside class="sidebar">
-                <ul>
-                    <li class="home">HOME</li>
-                    <li class="active">GENERAL</li>
-                    <li>BUILDING</li>
-                    <li>EXPLORATION</li>
-                    <li>COMBAT</li>
-                    <li>REDSTONE</li>
-                    <li>FARMING</li>
-                </ul>
-            </aside>
-
-            <main class="main">
-
-                <div class="feed-header">
-                    <h1>FEED</h1>
-                    <div class="sort-area">
-                        <!-- Updated button with ID -->
-                        <button class="new-btn" id="newPostBtn">New +</button>
-                    </div>
+        <main class="main">
+            <div class="feed-header">
+                <h1>FEED</h1>
+                <div class="sort-area">
+                    <button class="new-btn" id="newPostBtn">New +</button>
                 </div>
-                </div>
+            </div>
 
-            </main>
-            
-        <div id="noPostsMessage" style="display: none; text-align: center; padding: 40px; color: #777;">
-            <h3>No posts yet in this category</h3>
-            <p>Be the first to share something!</p>
+            <div id="postsContainer"></div>
+
+        </main>
         </div>
+
+         <!-- new posts here -->
 
         <div id="newPostModal" class="modal">
             <div class="modal-content">
                 <span class="close-modal" id="closeModal">&times;</span>
                 <h2>Create New Post</h2>
-                
+
                 <form id="newPostForm">
                     <label for="postTitle">Title</label>
                     <input type="text" id="postTitle" placeholder="Enter a catchy title..." required>
-
-                    <!-- Add this new field -->
-                    <label for="postCategory">Category</label>
-                    <select id="postCategory" required>
-                        <option value="" disabled selected>Select category...</option>
-                        <option value="building">BUILDING</option>
-                        <option value="exploration">EXPLORATION</option>
-                        <option value="combat">COMBAT</option>
-                        <option value="redstone">REDSTONE</option>
-                        <option value="farming">FARMING</option>
-                    </select>
 
                     <label for="postContent">Content</label>
                     <textarea id="postContent" rows="8" placeholder="Describe your build, farm, question..." required></textarea>
